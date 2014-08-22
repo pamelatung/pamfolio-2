@@ -1,0 +1,294 @@
+@import "default";
+
+//FONT STYLES
+$font-default: 'Helvetica Neue', 'Arial', sans-serif;
+$font-default-2: 'Source Sans Pro', 'Helvetica Neue', 'Arial', sans-serif;
+$font-special: 'Codystar', 'Helvetica Neue', 'Arial', sans-serif;
+$font-nav: 'Nothing You Could Do', 'Helvetica Neue', 'Arial', sans-serif;
+//FONT SIZES
+$size-h1: 72px;
+$blog-title: 45px;
+$size-h2: 24px;
+$size-h3: 20px;
+$size-p: 16px;
+$size-tiny: 12px;
+//FONT WEIGHTS
+$heavy: 800;
+$medium: 400;
+$med-light: 300;
+$light: 100;
+$spacing: 1px;
+
+h2 {
+	font-size: $size-h2;
+}
+
+.site-branding-hero {
+	width: 100%;
+	height: 100vh;
+	background: url(images/cloudy.jpg);
+	background-size: cover;
+	margin: 0 auto;
+	opacity: 0.25;
+
+	h1.site-title {
+		text-align: center;
+		font-size: $size-h1;
+	}
+}
+
+.site-branding {
+	width: 100%;
+	height: 100px;
+	background: peachpuff;
+}
+
+nav {
+	transition: all 1s;
+
+	.menu ul {
+		margin: 20px 0;
+
+		  li a {
+				margin: 0 20px;
+				padding-bottom: 5px;
+				font-family: $font-default;
+				font-size: $size-h3;
+				font-weight: $medium;
+				color: #000;
+				text-transform: uppercase;
+				background: none;
+				-webkit-transition: all 0.25s;
+
+					&:hover {
+						color: peachpuff;
+						border-bottom: 1px solid peachpuff;
+					}
+			}
+	}
+}
+
+.skills,
+.portfolio,
+.contact {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.about {
+	position: relative;
+	background: aliceblue;
+	height: 350px;
+	overflow: hidden;
+
+	img {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 35%;
+		height: auto;
+	}
+	p {
+		position: absolute;
+		width: 65%;
+		left: 0;
+		padding: 30px 50px;
+		margin: 0;
+	}
+}
+
+.skills {
+	border: 3px solid blue;
+	opacity: 0.25;
+
+	.skills-item {
+		width: 33%;
+		float: left;
+	}
+}
+
+.portfolio {
+	background: #FFF;
+
+	.port-item {
+		position: relative;
+		width: 100%;
+		text-align: center;
+
+		.big {
+			position: relative;
+			height: 150px;
+			background-size: 100%;
+			transition: all 0.5s;
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				// background: blue;
+				transition: all 0.25s;
+				opacity: 1;
+			}
+			.transparency {
+				opacity: 0;
+			}
+		}
+
+		#burp .big .overlay {
+			background: #DFF0EC;
+		}
+		#blarg .big .overlay {
+			background: #C3DED8;
+		}
+		#beep .big .overlay {
+			background: #A9C9C2;
+		}
+		#photo-gallery-story .big .overlay {
+			background: #9BBFB7;
+		}
+		#weather-ttc-api .big .overlay {
+			background: #86ADA5;
+		}
+		#wordpress-website .big .overlay {
+			background: #6E968E;
+		}
+
+		h3 {
+			position: absolute;
+			width: 100%;
+			top: 44%;
+			font-size: $blog-title;
+			// background: turquoise;
+		}
+	}
+}
+
+.contact {
+	opacity: 0.25;
+	border: 3px solid green;
+}
+
+/* ========================
+MAIN PAGE ENTRY STYLES
+===========================*/
+
+//PORTFOLIO - SINGLE PAGE
+article.portfolio.hentry {
+	background: #FFF;
+	.single-image {
+		width: 50%;
+	}
+}
+
+article.hentry  {
+	background: #DEDEDE;
+	// margin: 0;
+	// border-top-right-radius: 30px;
+	// border-bottom-right-radius: 30px;
+
+
+		.entry-content {
+			margin: 0;
+		}
+		.entry-meta {
+			padding: 30px 50px 0 50px;
+			font-weight: $heavy;
+		}
+		footer.entry-footer {
+			padding: 30px 50px;
+			background: #FFF;
+			font-size: $size-p;
+			// border-bottom-right-radius: 30px;
+
+				.comments-link a, .edit-link a {
+					padding: 0 15px;
+				}
+		}
+}
+
+/*===================
+BLOG STYLES
+=====================*/
+
+.page-title {
+	font-size: $blog-title;
+	color: salmon;
+}
+
+article.blog-index  {
+	background: #DEDEDE;
+	width: 30%;
+	height: 330px;
+	margin: 1%;
+	float: left;
+
+		h1.entry-title {
+			font-size: $blog-title;
+			padding: 10px;
+			background: white;
+		}
+		.entry-content {
+			padding: 10px;
+		}
+		.entry-meta {
+			padding: 10px;
+			font-weight: $heavy;
+		}
+		footer.entry-footer {
+			padding: 0;
+			font-size: $size-p;
+
+				.comments-link a, .edit-link a {
+					padding: 0 15px;
+				}
+		}
+}
+
+article.post-24 {
+	clear: both;
+}
+.site-info {
+	clear: both;
+}
+
+.content-area-single {
+	width: 75%;
+	float: left;
+	margin: 0;
+}
+
+		article.blog-single {
+			margin: 0;
+
+				h1.entry-title {
+					font-size: $blog-title;
+					padding-left: 20px;
+				}
+
+				.entry-meta-single {
+					padding-left: 20px;
+					font-weight: $heavy;
+				}
+				.entry-content-single {
+					padding: 20px;
+				}
+				footer.entry-footer-single {
+					padding: 30px 50px;
+					background: #FFF;
+					font-size: $size-p;
+					clear: both;
+					// border-bottom-right-radius: 30px;
+
+						.comments-link a, .edit-link a {
+							padding: 0 15px;
+						}
+				}
+		}
+
+.widget-area {
+	width: 20%;
+	float: left;
+}
