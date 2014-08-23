@@ -149,3 +149,5 @@ function get_excerpt_by_id($post_id){
    $the_excerpt = $the_post->post_excerpt; 
    return $the_excerpt;
 }
+
+add_filter('show_admin_bar', '__return_false');

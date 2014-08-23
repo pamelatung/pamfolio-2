@@ -434,10 +434,11 @@ a:active {
 --------------------------------------------------------------*/
 .main-navigation {
 	position: fixed;
+	width: 15%;
 	top: 0;
+	right: 0;
 	clear: both;
 	margin: 0 auto;
-	width: 100%;
 	z-index: 999;
 }
 
@@ -445,12 +446,12 @@ a:active {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-	text-align: center;
 }
 
 .main-navigation li {
 	position: relative;
 	display: inline-block;
+	// text-align: center;
 }
 
 .main-navigation a {

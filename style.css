@@ -405,17 +405,17 @@ a:active {
 --------------------------------------------------------------*/
 .main-navigation {
   position: fixed;
+  width: 15%;
   top: 0;
+  right: 0;
   clear: both;
   margin: 0 auto;
-  width: 100%;
   z-index: 999; }
 
 .main-navigation ul {
   list-style: none;
   margin: 0;
-  padding-left: 0;
-  text-align: center; }
+  padding-left: 0; }
 
 .main-navigation li {
   position: relative;
@@ -626,23 +626,29 @@ h2 {
   background: peachpuff; }
 
 nav {
+  padding-top: 50px;
   -webkit-transition: all 1s;
           transition: all 1s; }
   nav .menu ul {
     margin: 20px 0; }
     nav .menu ul li a {
-      margin: 0 20px;
-      padding-bottom: 5px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
       font-family: "Helvetica Neue", "Arial", sans-serif;
-      font-size: 20px;
+      font-size: 0;
       font-weight: 400;
       color: #000;
       text-transform: uppercase;
-      background: none;
+      background: #000;
       -webkit-transition: all 0.25s; }
       nav .menu ul li a:hover {
-        color: peachpuff;
-        border-bottom: 1px solid peachpuff; }
+        background: peachpuff; }
+
+li.label {
+  width: 100px;
+  height: 20px;
+  background: blue; }
 
 .skills,
 .portfolio,
@@ -677,15 +683,18 @@ nav {
     float: left; }
 
 .portfolio {
+  width: 100%;
   background: #FFF; }
   .portfolio .port-item {
     position: relative;
-    width: 100%;
+    width: 33.33%;
+    float: left;
     text-align: center; }
     .portfolio .port-item .big {
       position: relative;
-      height: 150px;
-      background-size: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
       -webkit-transition: all 0.5s;
               transition: all 0.5s; }
       .portfolio .port-item .big .overlay {
@@ -696,7 +705,7 @@ nav {
         height: 100%;
         -webkit-transition: all 0.25s;
                 transition: all 0.25s;
-        opacity: 1; }
+        opacity: 0.5; }
       .portfolio .port-item .big .transparency {
         opacity: 0; }
     .portfolio .port-item #burp .big .overlay {
@@ -715,11 +724,15 @@ nav {
       position: absolute;
       width: 100%;
       top: 44%;
-      font-size: 45px; }
+      font-size: 20px; }
 
 .contact {
-  opacity: 0.25;
-  border: 3px solid green; }
+  height: 350px;
+  text-align: center; }
+  .contact svg {
+    width: 35px; }
+    .contact svg path, .contact svg polygon, .contact svg rect {
+      fill: #FFF; }
 
 /* ========================
 MAIN PAGE ENTRY STYLES
@@ -774,9 +787,6 @@ article.blog-index {
 article.post-24 {
   clear: both; }
 
-.site-info {
-  clear: both; }
-
 .content-area-single {
   width: 75%;
   float: left;
@@ -803,3 +813,13 @@ article.blog-single {
 .widget-area {
   width: 20%;
   float: left; }
+
+/*===================
+FOOTERS
+=====================*/
+.entry-footer-home {
+  display: none; }
+
+.site-info {
+  background: none;
+  clear: both; }

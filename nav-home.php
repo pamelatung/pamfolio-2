@@ -11,23 +11,25 @@
 
 				<div class="menu">
 					<ul class="nav-menu">
+						<li class="label">
+						</li>
 						<li class="current_page_item">
-							<a href="#" data-id="home">Home</a>
+							<a href="#" data-id="home" data-name="Home">Home</a>
 						</li>	
 						<li class="page_item page-item-18">
-							<a href="#" data-id="about">About</a>
+							<a href="#" data-id="about" data-name="About">About</a>
 						</li>	
 						<li class="page_item page-item-18">
-							<a href="#" data-id="skills">Skills</a>
+							<a href="#" data-id="skills" data-name="Skills">Skills</a>
 						</li>	
 						<li class="page_item page-item-4">
-							<a href="#" data-id="portfolio">Portfolio</a>
+							<a href="#" data-id="portfolio" data-name="Portfolio">Portfolio</a>
 						</li>
 						<li>
-							<a href="http://localhost:8888/colourarchive/blog">Blog</a>
+							<a href="http://localhost:8888/colourarchive/blog" data-name="Blog">Blog</a>
 						</li>	
 						<li class="page_item page-item-4">
-							<a href="#" data-id="contact">Contact</a>
+							<a href="#" data-id="contact" data-name="Contact">Contact</a>
 						</li>								
 					</ul>
 				</div>

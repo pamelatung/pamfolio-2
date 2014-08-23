@@ -21,6 +21,10 @@ $(document).ready(function() {
 		$(this).toggleClass('transparency');
 	});
 
+	$('li a').hover(function() {
+		
+	});
+
 });
 
 // scroll function
