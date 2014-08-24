@@ -434,10 +434,11 @@ a:active {
 --------------------------------------------------------------*/
 .main-navigation {
 	position: fixed;
-	width: 15%;
-	top: 0;
-	right: 0;
+	width: 14%;
+	top: -12px;
+	left: 85%;
 	clear: both;
+	padding: 0;
 	margin: 0 auto;
 	z-index: 999;
 }

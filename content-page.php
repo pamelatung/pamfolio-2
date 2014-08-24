@@ -17,10 +17,14 @@
 			<?php while( has_sub_field('about') ) : ?>
 			  
 			  <div class="about" id="about">
+			  	<div class="about-bio">
 			      <p><?php the_sub_field('about_text') ?></p>
+			    </div>
 
 			      <?php $image = get_sub_field('profile_photo'); ?>
-			      <img src="<?php echo $image['sizes']['medium'] ?>">
+			      <div class="about-img">
+			      	<img src="<?php echo $image['sizes']['large'] ?>">
+			      </div>
 			  </div>
 
 			 <?php endwhile; ?>
@@ -42,7 +46,7 @@
 			 <!-- END SKILLS SECTION -->
 			
 			<!-- PORTFOLIO SECTION -->
-				<?php get_template_part( 'content', 'porthome' ); ?>
+				<?php get_template_part( 'content', 'porttest' ); ?>
 				<!-- END PORTFOLIO SECTION -->
 
 			<!-- CONTACT SECTION -->
