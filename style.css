@@ -255,9 +255,7 @@ dd {
 
 img {
   height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
+  /* Make sure images are scaled correctly. */ }
 
 figure {
   margin: 0; }
@@ -615,6 +613,7 @@ h2 {
   width: 100%;
   height: 100vh;
   background: url(images/desk-2-mono.jpg);
+  background-attachment: fixed;
   background-size: cover;
   margin: 0 auto;
   overflow: hidden; }
@@ -635,12 +634,14 @@ h2 {
       -webkit-transition: all 0.1s;
               transition: all 0.1s; }
       .site-branding-hero h1.site-title a:hover {
-        color: #4a6489; }
+        color: rgba(255, 255, 255, 0.5); }
 
 .site-branding {
   width: 100%;
   height: 100px;
-  background: peachpuff; }
+  background: url(images/desk-2-mono.jpg);
+  background-size: 100%;
+  background-attachment: fixed; }
 
 /*========================
 NAVIGATION
@@ -650,20 +651,20 @@ nav {
   -webkit-transition: all 1s;
           transition: all 1s; }
   nav .menu ul {
-    margin: 20px 0; }
+    margin: 20px 0 8px 0; }
     nav .menu ul li {
       margin-right: 4px; }
-      nav .menu ul li:nth-of-type(1) a:hover {
+      nav .menu ul li:nth-child(1) a:hover {
         background: red; }
-      nav .menu ul li:nth-of-type(2) a:hover {
+      nav .menu ul li:nth-child(2) a:hover {
         background: gold; }
-      nav .menu ul li:nth-of-type(3) a:hover {
-        background: green; }
-      nav .menu ul li:nth-of-type(4) a:hover {
-        background: orange; }
-      nav .menu ul li:nth-of-type(5) a:hover {
+      nav .menu ul li:nth-child(3) a:hover {
+        background: turquoise; }
+      nav .menu ul li:nth-child(4) a:hover {
+        background: salmon; }
+      nav .menu ul li:nth-child(5) a:hover {
         background: blue; }
-      nav .menu ul li:nth-of-type(6) a:hover {
+      nav .menu ul li:nth-child(6) a:hover {
         background: magenta; }
       nav .menu ul li a {
         display: inline-block;
@@ -686,7 +687,7 @@ nav {
               -ms-transform: scale(1);
                   transform: scale(1); }
 
-.label {
+span.label {
   width: 100px;
   height: 20px;
   margin-top: 0;
@@ -697,7 +698,7 @@ nav {
   display: none; }
 
 /*========================
-MAIN PAGE - ABOUT, SKILLS
+MAIN PAGE GENERAL
 =========================*/
 .skills,
 .portfolio,
@@ -706,30 +707,139 @@ MAIN PAGE - ABOUT, SKILLS
   float: left;
   clear: both; }
 
+.quote {
+  width: 100%;
+  height: 150px;
+  background: grey;
+  text-align: center;
+  color: #FFF; }
+  .quote h2 {
+    font-size: 24px; }
+
+/*========================
+MAIN PAGE - ABOUT
+=========================*/
 .about {
   position: relative;
-  background: aliceblue;
+  background: #FFF;
   height: 400px;
   overflow: hidden; }
   .about .about-img {
     position: absolute;
-    right: -10%;
+    right: -5%;
     top: -20%;
-    width: 50%;
+    width: 38.3%;
     overflow: hidden; }
+    .about .about-img img {
+      position: relative;
+      right: 18%;
+      width: 130%; }
   .about .about-bio p {
     position: absolute;
     width: 50%;
     left: 0;
     padding: 30px 50px;
-    margin: 0; }
+    margin: 0;
+    color: grey; }
 
+/*========================
+MAIN PAGE - SKILLS
+=========================*/
 .skills {
-  height: 100vh;
-  opacity: 0.25; }
+  height: 100vh; }
   .skills .skills-item {
-    width: 33%;
-    float: left; }
+    width: 33.333%;
+    height: 55vh;
+    float: left;
+    position: relative;
+    text-align: center;
+    overflow: hidden; }
+    .skills .skills-item:nth-child(1) {
+      background: #D1EBDD; }
+      .skills .skills-item:nth-child(1) p {
+        padding: 50px 50px; }
+      .skills .skills-item:nth-child(1) img {
+        width: 60%;
+        position: absolute;
+        top: 11%;
+        left: 20%; }
+    .skills .skills-item:nth-child(2) {
+      background: antiquewhite; }
+      .skills .skills-item:nth-child(2) img {
+        width: 65%;
+        position: absolute;
+        top: 10%;
+        left: 17%; }
+    .skills .skills-item:nth-child(3) {
+      background: #E3CACA; }
+    .skills .skills-item .seethru {
+      opacity: 0.3;
+      -webkit-transition: all 0.5s;
+              transition: all 0.5s; }
+    .skills .skills-item p {
+      position: absolute;
+      top: 5%;
+      padding: 80px 50px;
+      opacity: 0;
+      font-size: 20px;
+      color: #FFF;
+      text-align: center;
+      -webkit-transition: all 0.5s;
+              transition: all 0.5s; }
+    .skills .skills-item .pSlide {
+      top: 0;
+      opacity: 1; }
+    .skills .skills-item .arrow {
+      position: absolute;
+      width: 10%;
+      bottom: 5%;
+      left: 44%; }
+      .skills .skills-item .arrow .shape {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 23px 23px 23px;
+        border-color: transparent transparent rgba(255, 255, 255, 0.75) transparent;
+        -webkit-transition: all 0.2s;
+                transition: all 0.2s; }
+        .skills .skills-item .arrow .shape:hover {
+          border-color: transparent transparent rgba(255, 0, 0, 0.35) transparent;
+          cursor: pointer; }
+      .skills .skills-item .arrow .rotate {
+        border-width: 23px 23px 0 23px;
+        border-color: rgba(255, 0, 0, 0.35) transparent transparent transparent; }
+        .skills .skills-item .arrow .rotate:hover {
+          border-color: rgba(255, 255, 255, 0.75) transparent transparent transparent; }
+      .skills .skills-item .arrow h4 {
+        font-size: 11px;
+        font-weight: 800;
+        color: #FFF;
+        padding: 7px 0 0 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase; }
+  .skills .skills-footer {
+    height: 45vh;
+    width: 100%;
+    float: left;
+    background: none;
+    text-align: center; }
+    .skills .skills-footer p {
+      position: relative;
+      top: 15%;
+      font-size: 24px;
+      color: #FFF;
+      text-align: center; }
+    .skills .skills-footer svg {
+      width: 250px;
+      margin-top: 40px; }
+      .skills .skills-footer svg polygon {
+        fill: none;
+        stroke: #FFF;
+        stroke-weight: 5px; }
+      .skills .skills-footer svg:hover {
+        cursor: pointer; }
+        .skills .skills-footer svg:hover polygon {
+          fill: #FFF; }
 
 /*========================
 MAIN PAGE - PORTFOLIO
@@ -747,8 +857,7 @@ MAIN PAGE - PORTFOLIO
       color: #FFF; }
   .portfolio .port-item {
     position: relative;
-    width: 100%;
-    text-align: center; }
+    width: 100%; }
     .portfolio .port-item .big {
       position: relative;
       height: 150px;
@@ -757,42 +866,100 @@ MAIN PAGE - PORTFOLIO
       -webkit-transition: all 0.5s;
               transition: all 0.5s;
       overflow: hidden; }
-      .portfolio .port-item .big .single-image {
-        width: 50%; }
+      .portfolio .port-item .big img {
+        width: 50%;
+        float: left; }
+      .portfolio .port-item .big a {
+        position: absolute;
+        left: 19%;
+        top: 360px;
+        border: 1px solid #000;
+        padding: 5px;
+        border-radius: 6px;
+        cursor: pointer; }
+      .portfolio .port-item .big .project-text {
+        float: left;
+        width: 50%;
+        height: 100%;
+        padding: 30px 50px;
+        font-size: 14px;
+        -webkit-transition: all 0.5s;
+                transition: all 0.5s; }
+        .portfolio .port-item .big .project-text .item-name {
+          font-size: 20px; }
+      .portfolio .port-item .big .showProject {
+        opacity: 1; }
       .portfolio .port-item .big .overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        background: #B2B5BF;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        font-weight: 800;
+        color: #FFF;
+        text-align: center;
+        cursor: pointer;
         -webkit-transition: all 0.25s;
-                transition: all 0.25s;
-        opacity: 0.9; }
-      .portfolio .port-item .big .transparency {
-        opacity: 0;
-        background: none; }
+                transition: all 0.25s; }
+        .portfolio .port-item .big .overlay h3 {
+          position: absolute;
+          width: 100%;
+          top: 30%;
+          font-size: 20px; }
+        .portfolio .port-item .big .overlay p {
+          position: absolute;
+          width: 100%;
+          top: 55%;
+          font-size: 16px;
+          text-align: center; }
+        .portfolio .port-item .big .overlay p.close-me {
+          margin-top: -12px;
+          text-align: right;
+          color: #B2B5BF;
+          opacity: 0; }
+        .portfolio .port-item .big .overlay p.showLabels {
+          opacity: 1; }
+        .portfolio .port-item .big .overlay .hideLabels {
+          opacity: 0; }
+      .portfolio .port-item .big .moveAway {
+        height: 10%;
+        width: 100%;
+        top: 90%;
+        left: 0%;
+        background: #FFF;
+        color: #000; }
     .portfolio .port-item .expand {
-      height: 350px; }
-    .portfolio .port-item #burp .big .overlay {
-      background: peachpuff; }
-      .portfolio .port-item #burp .big .overlay:hover {
-        background: magenta; }
-    .portfolio .port-item #blarg .big .overlay {
-      background: #C3DED8; }
-    .portfolio .port-item #beep .big .overlay {
-      background: lightblue; }
-    .portfolio .port-item #photo-gallery-story .big .overlay {
-      background: grey; }
-    .portfolio .port-item #weather-ttc-api .big .overlay {
-      background: moccasin; }
-    .portfolio .port-item #wordpress-website .big .overlay {
-      background: thistle; }
-    .portfolio .port-item h3 {
-      position: absolute;
-      width: 100%;
-      top: 10%;
-      font-size: 20px; }
+      height: 500px; }
+    .portfolio .port-item #burp .big .project-text {
+      background: #FFDDC0; }
+    .portfolio .port-item #burp .big .overlay:hover {
+      background: #FFDDC0; }
+    .portfolio .port-item #blarg .big .project-text {
+      background: #C9E1DC; }
+    .portfolio .port-item #blarg .big .overlay:hover {
+      background: #C9E1DC; }
+    .portfolio .port-item #beep .big .project-text {
+      background: #C1D8E3; }
+    .portfolio .port-item #beep .big .overlay:hover {
+      background: #C1D8E3; }
+    .portfolio .port-item #photo-gallery-story .big .project-text {
+      background: #DEDEDE; }
+    .portfolio .port-item #photo-gallery-story .big .overlay:hover {
+      background: #DEDEDE; }
+    .portfolio .port-item #weather-ttc-api .big .project-text {
+      background: #E3CACA; }
+    .portfolio .port-item #weather-ttc-api .big .overlay:hover {
+      background: #E3CACA; }
+    .portfolio .port-item #wordpress-website .big .project-text {
+      background: #CAD0E3; }
+    .portfolio .port-item #wordpress-website .big .overlay:hover {
+      background: #CAD0E3; }
 
+/* ========================
+CONTACT STYLES
+===========================*/
 .contact {
   height: 350px;
   text-align: center;
@@ -801,6 +968,8 @@ MAIN PAGE - PORTFOLIO
     width: 35px; }
     .contact svg path, .contact svg polygon, .contact svg rect {
       fill: #FFF; }
+  .contact svg.logo {
+    width: 35px; }
 
 /* ========================
 MAIN PAGE ENTRY STYLES

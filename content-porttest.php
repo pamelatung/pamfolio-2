@@ -10,9 +10,9 @@
 
  	<div class="portfolio" id="portfolio">
 
- 		<div class="portfolio-header">
+<!--  		<div class="portfolio-header">
  			<h2>Work by Pamela</h2>
- 		</div>
+ 		</div> -->
 	
 		<?php if ($portfolioQuery->have_posts() ) : ?>
 				<?php while ($portfolioQuery->have_posts()) : $portfolioQuery->the_post(); ?>			
@@ -25,12 +25,27 @@
 						      <?php $image = get_sub_field('image_single'); ?>
 
 										<div class="big">
-											<div class="single-image">
-								     	 <img src="<?php echo $image['sizes']['large'] ?>">
-								      </div>
- 								    	<div class="overlay">
+								     	 <img src="<?php echo $image['sizes']['large'] ?>">	
 
+								     	 <a href="<?php the_field('demo_link') ?>">See The Demo Here!</a>
+
+											<div class="project-text">
+
+												<p class="item-name"><?php the_field('item_name') ?></p>
+
+									     	 <p><?php the_field('long_description') ?></p>
+
+									     	 <p><?php the_field('short_description') ?></p>
+
+									     	 <p>Client: <?php the_field('client_name') ?></p>
+									    </div>	
+
+ 								    	<div class="overlay">
+ 								    		<h3><?php the_title(); ?></h3>				
+ 								    		<p class="overlay-desc"><?php the_field('short_description') ?></p>
+ 								    		<p class="close-me">Close Me</p>						
 								    	</div>
+								    	
 								    </div>
 
 							 <?php endwhile; ?>

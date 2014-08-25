@@ -32,14 +32,15 @@
 							<a href="http://localhost:8888/colourarchive/blog" data-name="blog">Blog</a>
 						</li>		
 					</ul>
+
 				</div>
 
-				<div class="label label-home">Home</div>
-				<div class="label label-about">About</div>
-				<div class="label label-skills">Skills</div>
-				<div class="label label-portfolio">Portfolio</div>
-				<div class="label label-contact">Contact</div>
-				<div class="label label-blog">Blog</div>
+				<span class="label label-home">Home</span>
+				<span class="label label-about">About</span>
+				<span class="label label-skills">Skills</span>
+				<span class="label label-portfolio">Portfolio</span>
+				<span class="label label-contact">Contact</span>
+				<span class="label label-blog">Blog</span>
 				
 
 			</nav><!-- #site-navigation -->

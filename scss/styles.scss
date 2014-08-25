@@ -11,6 +11,7 @@ $blog-title: 45px;
 $size-h2: 24px;
 $size-h3: 20px;
 $size-p: 16px;
+$size-small: 14px;
 $size-tiny: 12px;
 //FONT WEIGHTS
 $heavy: 800;
@@ -28,6 +29,7 @@ h2 {
 	width: 100%;
 	height: 100vh;
 	background: url(images/desk-2-mono.jpg);
+	background-attachment: fixed;
 	background-size: cover;
 	margin: 0 auto;
 	overflow: hidden;
@@ -46,16 +48,19 @@ h2 {
 				color: #FFF;
 				transition: all 0.1s;
 				&:hover {
-					color: rgba(74,100,137,1);
+					color: rgba(255,255,255,0.5);
 				}
 			}
-	}
-}
+
+	} // END h1.site-title
+} // END site-branding-hero
 
 .site-branding {
 	width: 100%;
 	height: 100px;
-	background: peachpuff;
+	background: url(images/desk-2-mono.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
 }
 
 /*========================
@@ -67,27 +72,27 @@ nav {
 	transition: all 1s;
 
 	.menu ul {
-		margin: 20px 0;
+		margin: 20px 0 8px 0;
 
 		  li {
 		  	margin-right: 4px;
 
-		  	&:nth-of-type(1) a {
+		  	&:nth-child(1) a {
 		  		&:hover { background: red; }
 		  	}
-		  	&:nth-of-type(2) a {
+		  	&:nth-child(2) a {
 		  		&:hover { background: gold; }
 		  	}
-		  	&:nth-of-type(3) a {
-		  		&:hover { background: green; }
+		  	&:nth-child(3) a {
+		  		&:hover { background: turquoise; }
 		  	}
-		  	&:nth-of-type(4) a {
-		  		&:hover { background: orange; }
+		  	&:nth-child(4) a {
+		  		&:hover { background: salmon; }
 		  	}
-		  	&:nth-of-type(5) a {
+		  	&:nth-child(5) a {
 		  		&:hover { background: blue; }
 		  	}
-		  	&:nth-of-type(6) a {
+		  	&:nth-child(6) a {
 		  		&:hover { background: magenta; }
 		  	}
 
@@ -108,12 +113,14 @@ nav {
 					&:hover {
 						transform: scale(1);
 					}
-			}
-		}
-	}
-}
+				}
 
-.label {
+		} // END li 		
+	} // END menu.ul
+} // END nav
+
+
+span.label {
 	width: 100px;
 	height: 20px;
 	margin-top: 0;
@@ -126,7 +133,7 @@ nav {
 
 
 /*========================
-MAIN PAGE - ABOUT, SKILLS
+MAIN PAGE GENERAL
 =========================*/
 
 .skills,
@@ -137,19 +144,40 @@ MAIN PAGE - ABOUT, SKILLS
 	clear: both;
 }
 
+.quote {
+	width: 100%;
+	height: 150px;
+	background: grey;
+	text-align: center;
+	color: #FFF;
+	h2 {
+		font-size: $size-h2;
+	}
+}
+
+/*========================
+MAIN PAGE - ABOUT
+=========================*/
+
 .about {
 	position: relative;
-	background: aliceblue;
+	background: #FFF;
 	height: 400px;
 	overflow: hidden;
 
 	.about-img {
 		position: absolute;
-		right: -10%;
+		right: -5%;
 		top: -20%;
-		width: 50%;
+		width: 38.3%;
+		// height: 100%;
 		// border-radius: 50%;
 		overflow: hidden;
+		img {
+			position: relative;
+			right: 18%;
+			width: 130%;
+		}
 	}
 	.about-bio p {
 		position: absolute;
@@ -157,16 +185,133 @@ MAIN PAGE - ABOUT, SKILLS
 		left: 0;
 		padding: 30px 50px;
 		margin: 0;
+		color: grey;
 	}
 }
 
+/*========================
+MAIN PAGE - SKILLS
+=========================*/
+
 .skills {
 	height: 100vh;
-	opacity: 0.25;
 
 	.skills-item {
-		width: 33%;
+		width: 33.333%;
+		height: 55vh;
 		float: left;
+		position: relative;
+		text-align: center;
+		overflow: hidden;
+
+		&:nth-child(1) {
+			background: #D1EBDD;
+			p { padding: 50px 50px; }
+			img {
+				width: 60%;
+				position: absolute;
+				top: 11%;
+				left: 20%;
+			}
+		}
+		&:nth-child(2) {
+			background: antiquewhite;
+			img {
+				width: 65%;
+				position: absolute;
+				top: 10%;
+				left: 17%;
+			}
+		}
+		&:nth-child(3) {
+			background: #E3CACA;
+		}
+		.seethru {
+			opacity: 0.3;
+			transition: all 0.5s;
+		}
+
+		p {
+			position: absolute;
+			top: 5%;
+			padding: 80px 50px;
+			opacity: 0;
+			font-size: $size-h3;
+			color: #FFF;
+			text-align: center;
+			transition: all 0.5s;
+		}
+		.pSlide {
+			top: 0;
+			opacity: 1;
+		}
+
+		.arrow {
+				position: absolute;
+				width: 10%;
+				bottom: 5%;
+				left: 44%;
+
+			.shape {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 23px 23px 23px;
+				border-color: transparent transparent rgba(255,255,255,0.75) transparent;
+				transition: all 0.2s;
+
+					&:hover {
+						border-color: transparent transparent rgba(255,0,0,0.35) transparent;
+						cursor: pointer;
+					}
+			}
+			.rotate {
+				border-width: 23px 23px 0 23px;
+				border-color: rgba(255,0,0,0.35) transparent transparent transparent;
+				&:hover {
+					border-color: rgba(255,255,255,0.75) transparent transparent transparent;
+				}
+			}
+			
+			h4 {
+				font-size: 11px;
+				font-weight: $heavy;
+				color: #FFF;
+				padding: 7px 0 0 8px;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.skills-footer {
+		height: 45vh;
+		width: 100%;
+		float: left;
+		background: none;
+		text-align: center;
+
+		p {
+			position: relative;
+			top: 15%;
+			font-size: $size-h2;
+			color: #FFF;
+			text-align: center;
+		}
+		svg {
+			width: 250px;
+			margin-top: 40px;
+			polygon{
+				fill: none;
+				stroke: #FFF;
+				stroke-weight: 5px;
+			}
+			&:hover {
+				cursor: pointer;
+				polygon {
+					fill: #FFF;
+				}
+			}
+		}
 	}
 }
 
@@ -193,7 +338,6 @@ MAIN PAGE - PORTFOLIO
 		position: relative;
 		width: 100%;
 		// float: left;
-		text-align: center;
 
 		.big {
 			position: relative;
@@ -203,8 +347,35 @@ MAIN PAGE - PORTFOLIO
 			transition: all 0.5s;
 			overflow: hidden;
 
-			.single-image {
+			img {
 				width: 50%;
+				float: left;
+			}
+			//DEMO LINK BUTTON
+			a {
+				position: absolute;
+				left: 19%;
+				top: 360px;
+				border: 1px solid #000;
+				padding: 5px;
+				border-radius: 6px;
+				cursor: pointer;
+			}
+
+			.project-text {
+				float: left;
+				width: 50%;
+				height: 100%;
+				padding: 30px 50px;
+				font-size: $size-small;
+				transition: all 0.5s;
+
+				.item-name {
+					font-size: $size-h3;
+				}
+			}
+			.showProject {
+				opacity: 1;
 			}
 
 			.overlay {
@@ -213,48 +384,107 @@ MAIN PAGE - PORTFOLIO
 				left: 0;
 				width: 100%;
 				height: 100%;
+				background: #B2B5BF;
+				border-bottom: 1px solid rgba(255,255,255,0.3);
+				font-weight: $heavy;
+				color: #FFF;
+				text-align: center;
+				cursor: pointer;
 				transition: all 0.25s;
-				opacity: 0.9;
+
+					h3 {
+						position: absolute;
+						width: 100%;
+						top: 30%;
+						font-size: $size-h3;					
+					}
+					p {
+						position: absolute;
+						width: 100%;
+						top: 55%;
+						font-size: $size-p;
+						text-align: center;
+					}
+					//PROJECT LABEL - CLOSE
+					p.close-me {
+						margin-top: -12px;
+						text-align: right;
+						color: #B2B5BF;
+						opacity: 0;
+					}
+
+					p.showLabels {
+						opacity: 1;
+					}
+					.hideLabels {
+						opacity: 0;
+					}			
 			}
-			.transparency {
-				opacity: 0;
-				background: none;
+			.moveAway {
+				height: 10%;
+				width: 100%;
+				top: 90%;
+				left: 0%;
+				// background: #D3D5DE;
+				background: #FFF;
+				color: #000;
 			}
 		}
+
 		.expand {
-			height: 350px;
+			height: 500px;
 		}
 
-		#burp .big .overlay {
-			background: peachpuff;
-			&:hover {
-				background: magenta;
-			}
+		#burp .big {
+			.project-text { background: #FFDDC0; }	
+			.overlay {
+				
+					&:hover { background: #FFDDC0; }
+				}
 		}
-		#blarg .big .overlay {
-			background: #C3DED8;
+		#blarg .big {
+
+			.project-text { background: #C9E1DC; }	
+			.overlay {
+
+					&:hover { background: #C9E1DC; }
+				}
 		}
-		#beep .big .overlay {
-			background: lightblue;
+		#beep .big {
+			.project-text { background: #C1D8E3; }	
+			.overlay {
+
+					&:hover { background: #C1D8E3;}
+				}
 		}
-		#photo-gallery-story .big .overlay {
-			background: grey;
+		#photo-gallery-story .big {
+			.project-text { background: #DEDEDE; }	
+			.overlay {
+
+					&:hover { background: #DEDEDE;}
+				}
 		}
-		#weather-ttc-api .big .overlay {
-			background: moccasin;
+		#weather-ttc-api .big {
+			.project-text { background: #E3CACA; }	
+			.overlay {
+
+				 &:hover { background: #E3CACA;}
+				}
 		}
-		#wordpress-website .big .overlay {
-			background: thistle;
+		#wordpress-website .big {
+			.project-text { background: #CAD0E3; }	
+			.overlay {
+
+					&:hover { background: #CAD0E3; }
+				}
 		}
 
-		h3 {
-			position: absolute;
-			width: 100%;
-			top: 10%;
-			font-size: $size-h3;
-		}
 	}
 }
+
+/* ========================
+CONTACT STYLES
+===========================*/
 
 .contact {
 	height: 350px;
@@ -266,6 +496,9 @@ MAIN PAGE - PORTFOLIO
 		path, polygon, rect {
 			fill: #FFF;
 		}
+	}
+	svg.logo {
+		width: 35px;
 	}
 }
 

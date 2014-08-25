@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	// navigation click actions	
-	$('.nav-menu .page_item a').on('click', function(event){
+	$('.nav-menu .page_item a, .skills-footer svg').on('click', function(event){
 		event.preventDefault();
 		var sectionID = $(this).attr("data-id");
 		scrollToID('#' + sectionID, 750);
@@ -17,18 +17,10 @@ $(document).ready(function() {
 		$('#main-nav').toggleClass("open");
 	});
 
-	// $('.overlay').hover(function() {
-	// 	$(this).toggleClass('transparency');
-	// });
-	$('.big').on('click', function() {
-		$(this).toggleClass('expand');
-	});
-		$('.overlay').on('click', function() {
-		$(this).toggleClass('transparency');
-	});
 
-	$('h1.site-title').fadeIn(800);
+	$('h1.site-title').fadeIn(800);  // Main page title fade in on load
 
+	// NAVIGATION LABEL ACTIONS
 	$('.nav-menu a, .nav-menu-page a').mouseenter(function() {
 		var section = $(this).data('name');
 		$('.label').hide();
@@ -38,17 +30,46 @@ $(document).ready(function() {
 		$('.label').hide();
 	});
 
-	$(window).scroll(function() {
-		var position = $(window).scrollTop();
-
-		if (position > 600 && position < 1000) {
-			$('.nav-menu a, .nav-menu-page a').css('background', '#000');
-		} else if (position > 1000) {
-			$('.nav-menu a, .nav-menu-page a').css('background', '#FFF');
-		} else {
-			$('.nav-menu a, .nav-menu-page a').css('background', '#FFF');
-		}
+// SKILLS SECTION ARROWS DISPLAY TEXT
+	$('.arrow').on('click', function() {
+		$(this).siblings('p').toggleClass('pSlide');
+		$(this).children('.shape').toggleClass('rotate');
+		$(this).siblings('img').toggleClass('seethru');
 	});
+
+	// $(window).scroll(function() {
+
+	//     var position = $(window).scrollTop();
+
+	//     if(position > 1000 && position < 1600) {
+	//     	$('.skills-item img').css('opacity', '1');
+	//     } else {
+	//     	$('.skills-item img').css('opacity', '0');
+	//     }
+	//    });
+
+	$('.overlay').on('click', function() {
+		$(this).parent('.big').toggleClass('expand');
+		$(this).toggleClass('moveAway');
+		$(this).children('h3, .overlay-desc').toggleClass('hideLabels');
+		$(this).children('.close-me').toggleClass('showLabels');
+		// $(this).children('.close-arrow').toggleClass('show-arrow');
+	});
+
+	// $('.overlay').on('click', function() {
+	// 	$(this).toggleClass('moveAway');
+	// });
+
+// $('.overlay').on('click', function() {
+// 	if ($(this).hasClass('block')) {
+// 		$(this).removeClass('block');
+// 		$(this).addClass('transparency');
+// 	} else {
+// 		$(this).removeClass('transparency');
+// 		$(this).addClass('block');
+// 	}
+// });
+		
 
 });
 

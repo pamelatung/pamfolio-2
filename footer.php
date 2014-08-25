@@ -12,9 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'pamfolio' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'pamfolio' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'pamfolio' ), 'pamfolio', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<p>&copy; Colour Archive 2014
+			<span class="sep"> | </span>					
+			Cautiously optimistic.</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
