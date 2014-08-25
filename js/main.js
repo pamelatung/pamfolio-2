@@ -37,38 +37,21 @@ $(document).ready(function() {
 		$(this).siblings('img').toggleClass('seethru');
 	});
 
-	// $(window).scroll(function() {
+	$(window).scroll(function() {
 
-	//     var position = $(window).scrollTop();
+	    var position = $(window).scrollTop();
 
-	//     if(position > 1000 && position < 1600) {
-	//     	$('.skills-item img').css('opacity', '1');
-	//     } else {
-	//     	$('.skills-item img').css('opacity', '0');
-	//     }
-	//    });
+	    if(position > 400 && position < 3000) {
+	    	$('.about').addClass('about-show');
+	    } 
+	   });
 
 	$('.overlay').on('click', function() {
 		$(this).parent('.big').toggleClass('expand');
 		$(this).toggleClass('moveAway');
 		$(this).children('h3, .overlay-desc').toggleClass('hideLabels');
 		$(this).children('.close-me').toggleClass('showLabels');
-		// $(this).children('.close-arrow').toggleClass('show-arrow');
 	});
-
-	// $('.overlay').on('click', function() {
-	// 	$(this).toggleClass('moveAway');
-	// });
-
-// $('.overlay').on('click', function() {
-// 	if ($(this).hasClass('block')) {
-// 		$(this).removeClass('block');
-// 		$(this).addClass('transparency');
-// 	} else {
-// 		$(this).removeClass('transparency');
-// 		$(this).addClass('block');
-// 	}
-// });
 		
 
 });

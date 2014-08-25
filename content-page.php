@@ -45,7 +45,7 @@
 
 			      <p><?php the_sub_field('skills_text'); ?></p>
 						
-						<!-- Arrow SVG -->
+						<!-- Arrow Buttons -->
 						<div class="arrow">
 								<div class="shape"></div>
 				    
@@ -57,7 +57,7 @@
 			 <?php endwhile; ?>
 
 			 <div class="skills-footer"> 
-			 	<p>A few projects I have worked on:</p>
+			 	<p>Projects I have worked on:</p>
 
 			 	 <svg viewBox="0 0 99.5 53.8" data-id="portfolio">
 				 	 <g id="Layer_1_1_" display="none">

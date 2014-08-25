@@ -612,7 +612,7 @@ h2 {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url(images/desk-2-mono.jpg);
+  background: url(images/hero-2-bw.jpg);
   background-attachment: fixed;
   background-size: cover;
   margin: 0 auto;
@@ -631,15 +631,15 @@ h2 {
     display: none; }
     .site-branding-hero h1.site-title a {
       color: #FFF;
-      -webkit-transition: all 0.1s;
-              transition: all 0.1s; }
+      -webkit-transition: color 0.2s;
+              transition: color 0.2s; }
       .site-branding-hero h1.site-title a:hover {
-        color: rgba(255, 255, 255, 0.5); }
+        color: #333; }
 
 .site-branding {
   width: 100%;
   height: 100px;
-  background: url(images/desk-2-mono.jpg);
+  background: url(images/hero-2.jpg);
   background-size: 100%;
   background-attachment: fixed; }
 
@@ -710,7 +710,6 @@ MAIN PAGE GENERAL
 .quote {
   width: 100%;
   height: 150px;
-  background: grey;
   text-align: center;
   color: #FFF; }
   .quote h2 {
@@ -723,7 +722,8 @@ MAIN PAGE - ABOUT
   position: relative;
   background: #FFF;
   height: 400px;
-  overflow: hidden; }
+  overflow: hidden;
+  opacity: 0; }
   .about .about-img {
     position: absolute;
     right: -5%;
@@ -737,10 +737,15 @@ MAIN PAGE - ABOUT
   .about .about-bio p {
     position: absolute;
     width: 50%;
-    left: 0;
-    padding: 30px 50px;
+    left: 9%;
+    padding: 50px;
     margin: 0;
+    font-size: 15px;
+    line-height: 1.75;
     color: grey; }
+
+.about-show {
+  opacity: 1; }
 
 /*========================
 MAIN PAGE - SKILLS
@@ -874,15 +879,22 @@ MAIN PAGE - PORTFOLIO
         left: 19%;
         top: 360px;
         border: 1px solid #000;
-        padding: 5px;
+        padding: 5px 10px;
         border-radius: 6px;
-        cursor: pointer; }
+        cursor: pointer;
+        -webkit-transition: all 0.25s;
+                transition: all 0.25s; }
+        .portfolio .port-item .big a:hover {
+          border: 1px solid #666;
+          background: #666;
+          color: #FFF; }
       .portfolio .port-item .big .project-text {
         float: left;
         width: 50%;
         height: 100%;
         padding: 30px 50px;
         font-size: 14px;
+        line-height: 1.75;
         -webkit-transition: all 0.5s;
                 transition: all 0.5s; }
         .portfolio .port-item .big .project-text .item-name {
@@ -898,7 +910,6 @@ MAIN PAGE - PORTFOLIO
         background: #B2B5BF;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         font-weight: 800;
-        color: #FFF;
         text-align: center;
         cursor: pointer;
         -webkit-transition: all 0.25s;
@@ -907,18 +918,24 @@ MAIN PAGE - PORTFOLIO
           position: absolute;
           width: 100%;
           top: 30%;
-          font-size: 20px; }
+          font-size: 20px;
+          color: #FFF; }
         .portfolio .port-item .big .overlay p {
           position: absolute;
           width: 100%;
           top: 55%;
           font-size: 16px;
-          text-align: center; }
+          text-align: center;
+          color: #FFF; }
         .portfolio .port-item .big .overlay p.close-me {
           margin-top: -12px;
+          padding-right: 20px;
+          font-weight: 400;
           text-align: right;
           color: #B2B5BF;
           opacity: 0; }
+          .portfolio .port-item .big .overlay p.close-me:hover {
+            color: #FFF; }
         .portfolio .port-item .big .overlay p.showLabels {
           opacity: 1; }
         .portfolio .port-item .big .overlay .hideLabels {
@@ -980,7 +997,9 @@ article.portfolio.hentry {
     width: 50%; }
 
 article.hentry {
-  background: #DEDEDE; }
+  background: #DEDEDE;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s; }
   article.hentry .entry-content {
     margin: 0; }
   article.hentry .entry-meta {
