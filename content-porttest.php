@@ -21,9 +21,12 @@
 						      <?php $image = get_sub_field('image_single'); ?>
 
 										<div class="big">
+										
+											<div class="demoWrap">
 								     	 <img src="<?php echo $image['sizes']['large'] ?>">	
 
 								     	 <a href="<?php the_field('demo_link') ?>">See The Demo Here!</a>
+								     	</div>
 
 											<div class="project-text">
 
