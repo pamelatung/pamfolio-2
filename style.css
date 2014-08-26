@@ -85,7 +85,7 @@ html {
   box-sizing: border-box; }
 
 body {
-  background: mintcream;
+  background: none;
   /* Fallback for when there is no custom background color defined. */ }
 
 article,
@@ -605,6 +605,9 @@ iframe,
 object {
   max-width: 100%; }
 
+body {
+  font-family: "Helvetica Neue", "Arial", sans-serif; }
+
 h2 {
   font-size: 24px; }
 
@@ -619,15 +622,16 @@ h2 {
   overflow: hidden; }
   .site-branding-hero h1.site-title {
     position: absolute;
-    top: 40%;
+    top: 34%;
+    left: -3%;
     width: 100%;
     text-align: center;
     font-family: "Permanent Marker", "Brush Script MT", "Arial", cursive;
-    font-size: 120px;
+    font-size: 130px;
     line-height: 1;
-    -webkit-transform: rotate(-20deg);
-        -ms-transform: rotate(-20deg);
-            transform: rotate(-20deg);
+    -webkit-transform: rotate(-15deg);
+        -ms-transform: rotate(-15deg);
+            transform: rotate(-15deg);
     display: none; }
     .site-branding-hero h1.site-title a {
       color: #FFF;
@@ -635,6 +639,16 @@ h2 {
               transition: color 0.2s; }
       .site-branding-hero h1.site-title a:hover {
         color: #333; }
+
+h2.caption {
+  position: absolute;
+  top: 85vh;
+  left: 42%;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: grey; }
 
 .site-branding {
   width: 100%;
@@ -655,17 +669,17 @@ nav {
     nav .menu ul li {
       margin-right: 4px; }
       nav .menu ul li:nth-child(1) a:hover {
-        background: red; }
+        background: red !important; }
       nav .menu ul li:nth-child(2) a:hover {
-        background: gold; }
+        background: gold !important; }
       nav .menu ul li:nth-child(3) a:hover {
-        background: turquoise; }
+        background: turquoise !important; }
       nav .menu ul li:nth-child(4) a:hover {
-        background: salmon; }
+        background: salmon !important; }
       nav .menu ul li:nth-child(5) a:hover {
-        background: blue; }
+        background: blue !important; }
       nav .menu ul li:nth-child(6) a:hover {
-        background: magenta; }
+        background: magenta !important; }
       nav .menu ul li a {
         display: inline-block;
         width: 18px;
@@ -686,6 +700,8 @@ nav {
           -webkit-transform: scale(1);
               -ms-transform: scale(1);
                   transform: scale(1); }
+      nav .menu ul li a.is-selected {
+        background: #000; }
 
 span.label {
   width: 100px;
@@ -713,7 +729,11 @@ MAIN PAGE GENERAL
   text-align: center;
   color: #FFF; }
   .quote h2 {
-    font-size: 24px; }
+    padding: 55px;
+    font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    letter-spacing: 1px; }
 
 /*========================
 MAIN PAGE - ABOUT
@@ -721,7 +741,7 @@ MAIN PAGE - ABOUT
 .about {
   position: relative;
   background: #FFF;
-  height: 400px;
+  height: 450px;
   overflow: hidden;
   opacity: 0; }
   .about .about-img {
@@ -736,13 +756,28 @@ MAIN PAGE - ABOUT
       width: 130%; }
   .about .about-bio p {
     position: absolute;
-    width: 50%;
-    left: 9%;
+    width: 33.33%;
+    left: 33.33%;
     padding: 50px;
     margin: 0;
+    font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
     font-size: 15px;
+    font-weight: 100;
     line-height: 1.75;
     color: grey; }
+  .about .about-left {
+    position: absolute;
+    width: 33.33%;
+    height: 100%;
+    left: 0;
+    padding: 105px 50px;
+    background: #C3D6D1; }
+    .about .about-left p {
+      font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
+      font-size: 24px;
+      letter-spacing: 1px;
+      text-align: center;
+      color: #FFF; }
 
 .about-show {
   opacity: 1; }
@@ -755,12 +790,15 @@ MAIN PAGE - SKILLS
   .skills .skills-item {
     width: 33.333%;
     height: 55vh;
+    margin: 0 auto;
     float: left;
     position: relative;
     text-align: center;
+    -webkit-transition: background 0.2s;
+            transition: background 0.2s;
     overflow: hidden; }
     .skills .skills-item:nth-child(1) {
-      background: #D1EBDD; }
+      background: #C4C4C4; }
       .skills .skills-item:nth-child(1) p {
         padding: 50px 50px; }
       .skills .skills-item:nth-child(1) img {
@@ -768,15 +806,26 @@ MAIN PAGE - SKILLS
         position: absolute;
         top: 11%;
         left: 20%; }
+      .skills .skills-item:nth-child(1):hover {
+        background: moccasin; }
     .skills .skills-item:nth-child(2) {
-      background: antiquewhite; }
+      background: #B0B0B0; }
       .skills .skills-item:nth-child(2) img {
         width: 65%;
         position: absolute;
         top: 10%;
         left: 17%; }
+      .skills .skills-item:nth-child(2):hover {
+        background: peachpuff; }
     .skills .skills-item:nth-child(3) {
-      background: #E3CACA; }
+      background: #D4D4D4; }
+      .skills .skills-item:nth-child(3) img {
+        width: 45%;
+        position: absolute;
+        top: 18%;
+        left: 27%; }
+      .skills .skills-item:nth-child(3):hover {
+        background: lightsalmon; }
     .skills .skills-item .seethru {
       opacity: 0.3;
       -webkit-transition: all 0.5s;
@@ -784,11 +833,12 @@ MAIN PAGE - SKILLS
     .skills .skills-item p {
       position: absolute;
       top: 5%;
-      padding: 80px 50px;
-      opacity: 0;
+      padding: 50px;
       font-size: 20px;
+      font-weight: 800;
       color: #FFF;
       text-align: center;
+      opacity: 0;
       -webkit-transition: all 0.5s;
               transition: all 0.5s; }
     .skills .skills-item .pSlide {
@@ -826,25 +876,28 @@ MAIN PAGE - SKILLS
     height: 45vh;
     width: 100%;
     float: left;
-    background: none;
+    background: url(images/desk-2-bw.jpg);
+    background-size: 100%;
     text-align: center; }
     .skills .skills-footer p {
       position: relative;
       top: 15%;
-      font-size: 24px;
-      color: #FFF;
+      font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
+      font-size: 30px;
+      color: #B0B0B0;
       text-align: center; }
     .skills .skills-footer svg {
       width: 250px;
       margin-top: 40px; }
       .skills .skills-footer svg polygon {
         fill: none;
-        stroke: #FFF;
+        stroke: #B0B0B0;
         stroke-weight: 5px; }
       .skills .skills-footer svg:hover {
         cursor: pointer; }
         .skills .skills-footer svg:hover polygon {
-          fill: #FFF; }
+          stroke: salmon;
+          fill: salmon; }
 
 /*========================
 MAIN PAGE - PORTFOLIO
@@ -852,14 +905,6 @@ MAIN PAGE - PORTFOLIO
 .portfolio {
   width: 100%;
   background: #FFF; }
-  .portfolio .portfolio-header {
-    width: 100%;
-    height: 150px;
-    background: peachpuff; }
-    .portfolio .portfolio-header h2 {
-      font-size: 45px;
-      text-align: center;
-      color: #FFF; }
   .portfolio .port-item {
     position: relative;
     width: 100%; }
@@ -892,9 +937,11 @@ MAIN PAGE - PORTFOLIO
         float: left;
         width: 50%;
         height: 100%;
-        padding: 30px 50px;
-        font-size: 14px;
+        padding: 30px 60px;
+        font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
+        font-size: 16px;
         line-height: 1.75;
+        letter-spacing: 0.5px;
         -webkit-transition: all 0.5s;
                 transition: all 0.5s; }
         .portfolio .port-item .big .project-text .item-name {
@@ -909,37 +956,86 @@ MAIN PAGE - PORTFOLIO
         height: 100%;
         background: #B2B5BF;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        font-weight: 800;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        font-weight: 400;
         text-align: center;
         cursor: pointer;
-        -webkit-transition: all 0.25s;
-                transition: all 0.25s; }
+        -webkit-transition: all 0.5s;
+                transition: all 0.5s; }
         .portfolio .port-item .big .overlay h3 {
           position: absolute;
           width: 100%;
           top: 30%;
-          font-size: 20px;
+          font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
+          font-size: 24px;
+          letter-spacing: 1px;
           color: #FFF; }
         .portfolio .port-item .big .overlay p {
           position: absolute;
           width: 100%;
           top: 55%;
           font-size: 16px;
+          font-weight: 100;
+          letter-spacing: 3px;
           text-align: center;
           color: #FFF; }
         .portfolio .port-item .big .overlay p.close-me {
           margin-top: -12px;
-          padding-right: 20px;
+          text-align: center;
           font-weight: 400;
-          text-align: right;
-          color: #B2B5BF;
+          color: rgba(0, 0, 0, 0.1);
           opacity: 0; }
-          .portfolio .port-item .big .overlay p.close-me:hover {
-            color: #FFF; }
         .portfolio .port-item .big .overlay p.showLabels {
           opacity: 1; }
         .portfolio .port-item .big .overlay .hideLabels {
           opacity: 0; }
+        .portfolio .port-item .big .overlay p.arrowlabel {
+          position: absolute;
+          left: 23%;
+          top: 25%;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.1);
+          opacity: 1; }
+        .portfolio .port-item .big .overlay p.arrowlabel-2 {
+          position: absolute;
+          right: 23%;
+          top: 25%;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.1);
+          opacity: 1; }
+        .portfolio .port-item .big .overlay p.hideExpand {
+          opacity: 0; }
+        .portfolio .port-item .big .overlay .openWrap {
+          position: absolute;
+          top: 45%;
+          left: 25%;
+          -webkit-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+                  transform: rotate(180deg); }
+          .portfolio .port-item .big .overlay .openWrap .open-arrow {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 25px 25px 25px;
+            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent; }
+        .portfolio .port-item .big .overlay .openWrap2 {
+          position: absolute;
+          top: 45%;
+          right: 25%;
+          -webkit-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+                  transform: rotate(180deg); }
+          .portfolio .port-item .big .overlay .openWrap2 .open-arrow-2 {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 25px 25px 25px;
+            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent; }
+        .portfolio .port-item .big .overlay .direction {
+          -webkit-transform: rotate(360deg);
+              -ms-transform: rotate(360deg);
+                  transform: rotate(360deg); }
       .portfolio .port-item .big .moveAway {
         height: 10%;
         width: 100%;
@@ -950,13 +1046,13 @@ MAIN PAGE - PORTFOLIO
     .portfolio .port-item .expand {
       height: 500px; }
     .portfolio .port-item #burp .big .project-text {
-      background: #FFDDC0; }
+      background: #C9E1DC; }
     .portfolio .port-item #burp .big .overlay:hover {
-      background: #FFDDC0; }
+      background: #C9E1DC; }
     .portfolio .port-item #blarg .big .project-text {
-      background: #C9E1DC; }
+      background: #FFDDC0; }
     .portfolio .port-item #blarg .big .overlay:hover {
-      background: #C9E1DC; }
+      background: #FFDDC0; }
     .portfolio .port-item #beep .big .project-text {
       background: #C1D8E3; }
     .portfolio .port-item #beep .big .overlay:hover {
@@ -978,15 +1074,79 @@ MAIN PAGE - PORTFOLIO
 CONTACT STYLES
 ===========================*/
 .contact {
-  height: 350px;
+  height: 100vh;
+  padding: 50px 0;
   text-align: center;
+  background: url(images/hero-2-bw.jpg);
+  background-size: cover;
+  background-attachment: fixed;
   clear: both; }
-  .contact svg {
-    width: 35px; }
-    .contact svg path, .contact svg polygon, .contact svg rect {
-      fill: #FFF; }
-  .contact svg.logo {
-    width: 35px; }
+  .contact .icon-header {
+    width: 100%;
+    background: none;
+    text-align: center; }
+    .contact .icon-header h2 {
+      padding: 20px 0;
+      font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: grey; }
+    .contact .icon-header svg {
+      width: 75px; }
+      .contact .icon-header svg path, .contact .icon-header svg polygon, .contact .icon-header svg rect {
+        fill: grey; }
+      .contact .icon-header svg:hover path, .contact .icon-header svg rect, .contact .icon-header svg polygon {
+        fill: orange; }
+    .contact .icon-header svg.smaller {
+      width: 70px;
+      height: 70px; }
+  .contact .formWrap {
+    width: 100%;
+    height: 100%;
+    padding-left: 30%; }
+    .contact .formWrap form.contact {
+      width: 60%;
+      padding: 50px 0;
+      margin: 0 auto;
+      border-radius: 5px;
+      font-family: "Permanent Marker", "Brush Script MT", "Arial", cursive;
+      font-size: 14px;
+      background: none; }
+    .contact .formWrap input.firstName,
+    .contact .formWrap input.lastName,
+    .contact .formWrap input.email,
+    .contact .formWrap textarea.message {
+      display: block;
+      width: 100%;
+      color: #E3E3E3;
+      margin: 0 0 20px 0;
+      padding: 12px;
+      border: 2px solid grey;
+      border-radius: 5px;
+      background: none; }
+      .contact .formWrap input.firstName:focus,
+      .contact .formWrap input.lastName:focus,
+      .contact .formWrap input.email:focus,
+      .contact .formWrap textarea.message:focus {
+        border-color: orange;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        outline: none; }
+    .contact .formWrap .submit {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      font-weight: 200;
+      color: #e3e3e3;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 3px; }
+      .contact .formWrap .submit:hover {
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #333; }
 
 /* ========================
 MAIN PAGE ENTRY STYLES

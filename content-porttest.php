@@ -9,10 +9,6 @@
  		); ?>
 
  	<div class="portfolio" id="portfolio">
-
-<!--  		<div class="portfolio-header">
- 			<h2>Work by Pamela</h2>
- 		</div> -->
 	
 		<?php if ($portfolioQuery->have_posts() ) : ?>
 				<?php while ($portfolioQuery->have_posts()) : $portfolioQuery->the_post(); ?>			
@@ -41,9 +37,23 @@
 									    </div>	
 
  								    	<div class="overlay">
- 								    		<h3><?php the_title(); ?></h3>				
- 								    		<p class="overlay-desc"><?php the_field('short_description') ?></p>
- 								    		<p class="close-me">Close Me</p>						
+ 								    		
+ 								    		<p class="arrowlabel">EXPAND</p>  <!-- hidden when expanded -->
+ 								    			
+ 								    		<div class="openWrap"> 								    			
+ 								    			<div class="open-arrow"></div>
+ 								    		</div> 								    			
+
+	 								    		<h3> <?php the_title(); ?> </h3>				
+	 								    		<p class="overlay-desc"><?php the_field('short_description') ?></p>
+
+	 								  		<p class="arrowlabel-2">EXPAND</p> <!-- hidden when expanded -->
+
+	 								  		<div class="openWrap2">
+	 								  			<div class="open-arrow-2"></div>
+	 								  		</div>
+
+ 								    		<p class="close-me">CLOSE PROJECT</p> <!-- only visible when expanded	 -->		
 								    	</div>
 								    	
 								    </div>

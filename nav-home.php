@@ -14,22 +14,22 @@
 					<ul class="nav-menu">
 
 						<li class="current_page_item">
-							<a href="#" data-id="home" data-name="home" class="one">Home</a>
+							<a href="#" data-id="home" data-name="home" data-color="red" class="one">Home</a>
 						</li>	
 						<li class="page_item">
-							<a href="#" data-id="about" data-name="about">About</a>
+							<a href="#" data-id="about" data-name="about" data-color="gold">About</a>
 						</li>	
 						<li class="page_item">
-							<a href="#" data-id="skills" data-name="skills">Skills</a>
+							<a href="#" data-id="skills" data-name="skills" data-color="turquoise">Skills</a>
 						</li>	
 						<li class="page_item">
-							<a href="#" data-id="portfolio" data-name="portfolio">Portfolio</a>
+							<a href="#" data-id="portfolio" data-name="portfolio" data-color="salmon">Portfolio</a>
 						</li>	
 						<li class="page_item">
-							<a href="#" data-id="contact" data-name="contact">Contact</a>
+							<a href="#" data-id="contact" data-name="contact" data-color="blue">Contact</a>
 						</li>						
 						<li class="page_item_blog">
-							<a href="http://localhost:8888/colourarchive/blog" data-name="blog">Blog</a>
+							<a href="http://localhost:8888/colourarchive/blog" data-name="blog" data-color="magenta">Blog</a>
 						</li>		
 					</ul>
 
@@ -41,7 +41,9 @@
 				<span class="label label-portfolio">Portfolio</span>
 				<span class="label label-contact">Contact</span>
 				<span class="label label-blog">Blog</span>
-				
 
 			</nav><!-- #site-navigation -->
+
+			<h2 class="caption">Web Development</h2>
+
 		</header><!-- #masthead -->

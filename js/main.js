@@ -21,16 +21,33 @@ $(document).ready(function() {
 	$('h1.site-title').fadeIn(800);  // Main page title fade in on load
 
 	// NAVIGATION LABEL ACTIONS
-	$('.nav-menu a, .nav-menu-page a').mouseenter(function() {
+	// $('.nav-menu a, .nav-menu-page a').mouseenter(function() {
+	// 	var section = $(this).data('name');
+	// 	$('.label').hide();
+	// 	$('.label-' + section).fadeIn();
+	// });
+	// $('.nav-menu a, .nav-menu-page a').mouseleave(function() {
+	// 	$('.label').hide();
+	// });
+	var $dot = $('.nav-menu a, .nav-menu-page a');
+
+	$dot.mouseenter(function() {
 		var section = $(this).data('name');
 		$('.label').hide();
 		$('.label-' + section).fadeIn();
 	});
-	$('.nav-menu a, .nav-menu-page a').mouseleave(function() {
+	$dot.mouseleave(function() { 
 		$('.label').hide();
 	});
 
+	$dot.on('click', function() {
+		$dot.css('background-color', '#FFF');
+		var colorID = $(this).data('color');
+		$(this).css('background-color', colorID);
+	});
+
 // SKILLS SECTION ARROWS DISPLAY TEXT
+$('.skill-overlay').hide();
 	$('.arrow').on('click', function() {
 		$(this).siblings('p').toggleClass('pSlide');
 		$(this).children('.shape').toggleClass('rotate');
@@ -44,13 +61,15 @@ $(document).ready(function() {
 	    if(position > 400 && position < 3000) {
 	    	$('.about').addClass('about-show');
 	    } 
-	   });
+	});
 
 	$('.overlay').on('click', function() {
 		$(this).parent('.big').toggleClass('expand');
 		$(this).toggleClass('moveAway');
 		$(this).children('h3, .overlay-desc').toggleClass('hideLabels');
 		$(this).children('.close-me').toggleClass('showLabels');
+		$(this).children('.openWrap, .openWrap2').toggleClass('direction');
+		$(this).children('.arrowlabel, .arrowlabel-2').toggleClass('hideExpand');
 	});
 		
 
@@ -72,7 +91,6 @@ if (typeof console === "undefined") {
         log: function() { }
     };
 }
-
 
 
 
