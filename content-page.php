@@ -17,7 +17,7 @@
 			<?php while( has_sub_field('about') ) : ?>
 
 				<div class="quote" id="about">
-					<h2>Quote quote quote quote quote</h2>
+					<h2>"Only put off until tomorrow what you are willing to die having left undone."</h2>
 				</div>
 			  
 			  <div class="about">

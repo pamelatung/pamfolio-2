@@ -7,8 +7,6 @@
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">			
 
-			<?php  ?>
-
 				<div class="menu">
 
 					<ul class="nav-menu">
@@ -28,9 +26,9 @@
 						<li class="page_item">
 							<a href="#" data-id="contact" data-name="contact" data-color="blue">Contact</a>
 						</li>						
-						<li class="page_item_blog">
+						<!-- <li class="page_item_blog">
 							<a href="http://localhost:8888/colourarchive/blog" data-name="blog" data-color="magenta">Blog</a>
-						</li>		
+						</li>		 -->
 					</ul>
 
 				</div>

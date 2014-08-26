@@ -25,7 +25,7 @@
 											<div class="demoWrap">
 								     	 <img src="<?php echo $image['sizes']['large'] ?>">	
 
-								     	 <a href="<?php the_field('demo_link') ?>">See The Demo Here!</a>
+								     	 <a href="<?php the_field('demo_link') ?>">See The Demo Here</a>
 								     	</div>
 
 											<div class="project-text">
@@ -34,7 +34,7 @@
 
 									     	 <p><?php the_field('long_description') ?></p>
 
-									     	 <p><?php the_field('short_description') ?></p>
+									     	 <p>Tools Used: <?php the_field('short_description') ?></p>
 
 									     	 <p>Client: <?php the_field('client_name') ?></p>
 									    </div>	

@@ -25,9 +25,9 @@
 				<li>
 					<a href="http://localhost:8888/colourarchive/#contact" data-name="contact">Contact</a>
 				</li>	
-				<li>
+				<!-- <li>
 					<a href="http://localhost:8888/colourarchive/blog" data-name="blog">Blog</a>
-				</li>						
+				</li>			 -->			
 			</ul>
 		</div>
 
