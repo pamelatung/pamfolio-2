@@ -34,9 +34,9 @@
 
 									     	 <p><?php the_field('long_description') ?></p>
 
-									     	 <p>Tools Used: <?php the_field('short_description') ?></p>
+									     	 <p><span class="tasks">Tools Used:</span> <?php the_field('short_description') ?></p>
 
-									     	 <p>Client: <?php the_field('client_name') ?></p>
+									     	 <p><span class="tasks">Client:</span> <?php the_field('client_name') ?></p>
 									    </div>	
 
  								    	<div class="overlay">

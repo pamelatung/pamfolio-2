@@ -20,15 +20,6 @@ $(document).ready(function() {
 
 	$('h1.site-title').fadeIn(800);  // Main page title fade in on load
 
-	// NAVIGATION LABEL ACTIONS
-	// $('.nav-menu a, .nav-menu-page a').mouseenter(function() {
-	// 	var section = $(this).data('name');
-	// 	$('.label').hide();
-	// 	$('.label-' + section).fadeIn();
-	// });
-	// $('.nav-menu a, .nav-menu-page a').mouseleave(function() {
-	// 	$('.label').hide();
-	// });
 	var $dot = $('.nav-menu a, .nav-menu-page a');
 
 	$dot.mouseenter(function() {
@@ -71,7 +62,6 @@ $('.skill-overlay').hide();
 		$(this).children('.openWrap, .openWrap2').toggleClass('direction');
 		$(this).children('.arrowlabel, .arrowlabel-2').toggleClass('hideExpand');
 	});
-		
 
 });
 

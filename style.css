@@ -599,15 +599,49 @@ h2.caption {
   background-attachment: fixed; }
 
 @media (max-width: 940px) {
-  .site-branding-hero h1.site-title {
-    left: 2%; } }
-@media (max-width: 490px) {
-  .site-branding-hero h1.site-title {
-    font-size: 100px;
-    left: 2%; }
+  .site-branding-hero {
+    height: 1000px;
+    background-image: url(images/hero-2-bw-tablet.jpg);
+    background-attachment: scroll;
+    background-size: 100%; }
+    .site-branding-hero h1.site-title {
+      left: 2%; } }
+@media (max-width: 640px) {
+  .site-branding-hero {
+    height: 1135px;
+    background-image: url(images/hero-2-bw-mobile.jpg);
+    background-attachment: scroll;
+    background-size: 100%; }
+    .site-branding-hero h1.site-title {
+      font-size: 100px;
+      left: 2%; }
 
   h2.caption {
     left: 30%; } }
+@media (max-width: 490px) {
+  .site-branding-hero {
+    height: 800px;
+    background: url(images/hero-2-bw-mobile.jpg);
+    background: scroll;
+    background-size: 100%; }
+    .site-branding-hero h1.site-title {
+      font-size: 100px;
+      left: 2%; }
+
+  h2.caption {
+    left: 30%; } }
+@media (max-width: 320px) {
+  .site-branding-hero {
+    height: 568px;
+    background: url(images/hero-2-bw-mobile.jpg);
+    background-size: 150; }
+    .site-branding-hero h1.site-title {
+      font-size: 50px;
+      left: 2%; }
+
+  h2.caption {
+    top: 390px;
+    left: 18%; } }
 /*========================
 NAVIGATION
 =========================*/
@@ -682,34 +716,27 @@ NAVIGATION - MEDIA QUERY 768px
     background: magenta !important; }
   nav .menu ul li a {
     color: #000; } }
-/* ----------------------------
-NAVIGATION - MEDIA QUERY 768px
-------------------------------- */
-@media (max-width: 768px) {
-  .main-navigation {
-    position: fixed;
-    width: 14%;
-    top: -12px;
-    left: 85%;
-    clear: both;
-    padding: 0;
-    margin: 0 auto;
-    z-index: 999; }
-
-  nav .menu ul li:nth-child(1) a {
-    background: red !important; }
-  nav .menu ul li:nth-child(2) a {
-    background: gold !important; }
-  nav .menu ul li:nth-child(3) a {
-    background: turquoise !important; }
-  nav .menu ul li:nth-child(4) a {
-    background: salmon !important; }
-  nav .menu ul li:nth-child(5) a {
-    background: blue !important; }
-  nav .menu ul li:nth-child(6) a {
-    background: magenta !important; }
-  nav .menu ul li a {
-    color: #000; } }
+@media (max-width: 320px) {
+  nav .menu ul {
+    display: block; }
+    nav .menu ul li:nth-child(1) a {
+      background: red !important; }
+    nav .menu ul li:nth-child(2) a {
+      background: gold !important; }
+    nav .menu ul li:nth-child(3) a {
+      background: turquoise !important; }
+    nav .menu ul li:nth-child(4) a {
+      background: salmon !important; }
+    nav .menu ul li:nth-child(5) a {
+      background: blue !important; }
+    nav .menu ul li:nth-child(6) a {
+      background: magenta !important; }
+    nav .menu ul li a {
+      color: #000; }
+      nav .menu ul li a:hover {
+        -webkit-transform: scale(0.7);
+            -ms-transform: scale(0.7);
+                transform: scale(0.7); } }
 /*========================
 MAIN PAGE GENERAL
 =========================*/
@@ -961,14 +988,9 @@ MAIN PAGE - SKILLS
         border-color: transparent transparent rgba(255, 255, 255, 0.75) transparent;
         -webkit-transition: all 0.2s;
                 transition: all 0.2s; }
-        .skills .skills-item .arrow .shape:hover {
-          border-color: transparent transparent rgba(255, 0, 0, 0.35) transparent;
-          cursor: pointer; }
       .skills .skills-item .arrow .rotate {
         border-width: 23px 23px 0 23px;
         border-color: rgba(255, 0, 0, 0.35) transparent transparent transparent; }
-        .skills .skills-item .arrow .rotate:hover {
-          border-color: rgba(255, 255, 255, 0.75) transparent transparent transparent; }
       .skills .skills-item .arrow h4 {
         font-size: 11px;
         font-weight: 800;
@@ -1035,14 +1057,29 @@ SKILLS - MEDIA QUERY FOR 768px
     .skills .skills-item .arrow {
       left: 41%; } }
 /* ---------------------------
-SKILLS - MEDIA QUERY FOR 490px
+SKILLS - MEDIA QUERY FOR 640px
 ------------------------------*/
-@media (max-width: 490px) {
+@media (max-width: 640px) {
+  .skills .skills-footer {
+    background: url(images/desk-2-bw-mobile.jpg);
+    background-size: 100%;
+    height: 500px; }
+    .skills .skills-footer svg {
+      width: 250px;
+      margin-top: 40px; }
+      .skills .skills-footer svg polygon {
+        fill: salmon;
+        stroke: salmon;
+        stroke-weight: 5px; } }
+/* ---------------------------
+SKILLS - MEDIA QUERY FOR 320px
+------------------------------*/
+@media (max-width: 320px) {
   .skills {
     height: 100%; }
     .skills .skills-item {
       width: 100%;
-      height: 500px;
+      height: 370px;
       margin: 0 auto; }
       .skills .skills-item p {
         padding: 50px 50px; }
@@ -1071,7 +1108,7 @@ SKILLS - MEDIA QUERY FOR 490px
         position: absolute;
         width: 10%;
         bottom: 5%;
-        left: 41%; }
+        left: 35%; }
         .skills .skills-item .arrow .shape {
           width: 0;
           height: 0;
@@ -1082,7 +1119,7 @@ SKILLS - MEDIA QUERY FOR 490px
                   transition: all 0.2s; }
         .skills .skills-item .arrow .rotate {
           border-width: 50px 50px 0 50px;
-          border-color: rgba(255, 255, 255, 0.75) transparent transparent transparent; }
+          border-color: rgba(255, 0, 0, 0.35) transparent transparent transparent; }
         .skills .skills-item .arrow h4 {
           font-size: 16px;
           font-weight: 800;
@@ -1091,10 +1128,14 @@ SKILLS - MEDIA QUERY FOR 490px
           letter-spacing: 1px;
           text-transform: uppercase; }
     .skills .skills-footer {
-      background: #FFF; }
+      background: url(images/desk-2-bw-mobile.jpg);
+      background-size: 100%;
+      height: 400px; }
+      .skills .skills-footer p {
+        margin: 0; }
       .skills .skills-footer svg {
         width: 250px;
-        margin-top: 40px; }
+        margin: 0; }
         .skills .skills-footer svg polygon {
           fill: salmon;
           stroke: salmon;
@@ -1173,7 +1214,7 @@ MAIN PAGE - PORTFOLIO
           font-size: 24px;
           letter-spacing: 1px;
           color: #FFF; }
-        .portfolio .port-item .big .overlay p {
+        .portfolio .port-item .big .overlay p.overlay-desc {
           position: absolute;
           width: 100%;
           top: 55%;
@@ -1183,7 +1224,7 @@ MAIN PAGE - PORTFOLIO
           text-align: center;
           color: #FFF; }
         .portfolio .port-item .big .overlay p.close-me {
-          margin-top: -12px;
+          margin-top: 12px;
           text-align: center;
           font-weight: 400;
           color: rgba(0, 0, 0, 0.1);
@@ -1194,14 +1235,14 @@ MAIN PAGE - PORTFOLIO
           opacity: 0; }
         .portfolio .port-item .big .overlay p.arrowlabel {
           position: absolute;
-          left: 23%;
+          left: 24.5%;
           top: 25%;
           font-weight: 400;
           color: rgba(0, 0, 0, 0.1);
           opacity: 1; }
         .portfolio .port-item .big .overlay p.arrowlabel-2 {
           position: absolute;
-          right: 23%;
+          right: 24.5%;
           top: 25%;
           font-weight: 400;
           color: rgba(0, 0, 0, 0.1);
@@ -1294,9 +1335,9 @@ PORTFOLIO - MEDIA QUERY FOR 940px
       .portfolio .port-item .big .project-text .item-name {
         font-size: 18px; } }
 /*-------------------------------------
-PORTFOLIO - MEDIA QUERY FOR 490px
+PORTFOLIO - MEDIA QUERY FOR 320px
 ---------------------------------------*/
-@media (max-width: 490px) {
+@media (max-width: 320px) {
   .portfolio {
     width: 100%;
     background: #FFF; }
@@ -1308,7 +1349,7 @@ PORTFOLIO - MEDIA QUERY FOR 490px
         float: left; }
       .portfolio .port-item .big .demoWrap a {
         position: static;
-        margin-left: 155px; }
+        margin-left: 75px; }
     .portfolio .port-item .big .project-text {
       width: 100%;
       height: 100%;
@@ -1318,10 +1359,14 @@ PORTFOLIO - MEDIA QUERY FOR 490px
       font-size: 14px; }
       .portfolio .port-item .big .project-text .item-name {
         font-size: 18px; }
+    .portfolio .port-item .big .overlay p.overlay-desc {
+      display: none; }
     .portfolio .port-item .big .overlay p.arrowlabel {
-      left: 35%; }
+      left: 35%;
+      display: none; }
     .portfolio .port-item .big .overlay p.arrowlabel-2 {
-      right: 35%; }
+      right: 35%;
+      display: none; }
     .portfolio .port-item .big .overlay p.hideExpand {
       opacity: 0; }
     .portfolio .port-item .big .overlay .openWrap {
@@ -1366,7 +1411,6 @@ CONTACT STYLES
   text-align: center;
   background: url(images/hero-2-bw.jpg);
   background-size: cover;
-  background-attachment: fixed;
   overflow: hidden;
   clear: both; }
   .contact .icon-header {
@@ -1376,7 +1420,7 @@ CONTACT STYLES
     .contact .icon-header h2 {
       padding: 20px 0;
       font-family: "Optima", "Helvetica Neue", "Arial", sans-serif;
-      font-weight: 800;
+      font-weight: 400;
       font-size: 24px;
       color: #FFF; }
     .contact .icon-header svg {
@@ -1384,93 +1428,119 @@ CONTACT STYLES
       .contact .icon-header svg path, .contact .icon-header svg polygon, .contact .icon-header svg rect {
         fill: #FFF; }
       .contact .icon-header svg:hover path, .contact .icon-header svg rect, .contact .icon-header svg polygon {
-        fill: sandybrown; }
+        fill: #333; }
     .contact .icon-header svg.smaller {
       width: 45px;
       height: 45px; }
+    .contact .icon-header p {
+      padding-top: 10px;
+      margin: 0;
+      font-size: 16px;
+      color: #FFF;
+      letter-spacing: 1px; }
+  .contact .contactInfo {
+    width: 100%;
+    padding: 20px 50px; }
   .contact .formWrap {
     width: 100%;
     padding-left: 0%; }
-    .contact .formWrap form.wpcf7-form {
-      width: 60%;
-      padding: 20px 0;
-      margin: 0 auto;
-      border-radius: 5px;
-      font-size: 14px;
-      background: none; }
-    .contact .formWrap input.firstName,
-    .contact .formWrap input.lastName,
-    .contact .formWrap input.email,
-    .contact .formWrap textarea.message {
-      display: block;
-      width: 100%;
-      color: #FFF;
-      font-weight: 100;
-      letter-spacing: 1px;
-      margin: 0 0 20px 0;
-      padding: 8px;
-      border: 2px solid #FFF;
-      border-radius: 5px;
-      background: none; }
-      .contact .formWrap input.firstName:focus,
-      .contact .formWrap input.lastName:focus,
-      .contact .formWrap input.email:focus,
-      .contact .formWrap textarea.message:focus {
-        border-color: #FFF;
-        background: rgba(0, 0, 0, 0.5);
-        -webkit-box-shadow: none;
-                box-shadow: none;
-        outline: none; }
-    .contact .formWrap .submit {
-      display: block;
-      width: 50%;
-      margin: 0 auto;
-      padding: 10px 0;
-      font-size: 16px;
-      font-weight: 200;
-      color: #e3e3e3;
-      text-transform: uppercase;
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 3px; }
-      .contact .formWrap .submit:hover {
-        background: rgba(255, 255, 255, 0.65);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #333; }
+  .contact form.wpcf7-form {
+    width: 50%;
+    padding: 20px 50px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-size: 14px;
+    background: none; }
+  .contact input.firstName,
+  .contact input.lastName,
+  .contact input.email,
+  .contact textarea.message {
+    display: block;
+    width: 100%;
+    color: #FFF;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+    padding: 8px;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    background: none; }
+    .contact input.firstName:focus,
+    .contact input.lastName:focus,
+    .contact input.email:focus,
+    .contact textarea.message:focus {
+      border-color: #FFF;
+      background: rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      outline: none; }
+  .contact .submit {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 200;
+    color: #e3e3e3;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px; }
+    .contact .submit:hover {
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #333; }
 
 /* ----------------------------
-CONTACT - MEDIA QUERY 490px
+CONTACT - MEDIA QUERY 320px IPHONE
 ----------------------------- */
-@media (max-width: 490px) {
-  .contact .icon-header h2 {
-    color: #FFF; }
-  .contact .icon-header svg {
-    width: 50px; }
-    .contact .icon-header svg path, .contact .icon-header svg polygon, .contact .icon-header svg rect {
-      fill: #FFF; }
-  .contact .icon-header svg.smaller {
-    width: 45px;
-    height: 45px; }
-  .contact .formWrap {
-    padding-left: 0%; }
-    .contact .formWrap form.wpcf7-form {
-      width: 75%; }
-    .contact .formWrap input.firstName,
-    .contact .formWrap input.lastName,
-    .contact .formWrap input.email,
-    .contact .formWrap textarea.message {
-      color: #FFF;
-      border-color: #FFF;
-      padding: 5px;
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: 1px; }
-      .contact .formWrap input.firstName:focus,
-      .contact .formWrap input.lastName:focus,
-      .contact .formWrap input.email:focus,
-      .contact .formWrap textarea.message:focus {
-        border-color: grey;
-        background: rgba(0, 0, 0, 0.4); } }
+@media (max-width: 320px) {
+  .contact {
+    height: 568px;
+    background: url(images/hero-2-bw-mobile.jpg);
+    background-size: 150%; }
+    .contact .icon-header {
+      height: 35px; }
+      .contact .icon-header h2 {
+        padding: 0;
+        margin-top: 20px;
+        font-size: 16px;
+        color: grey; }
+      .contact .icon-header svg {
+        width: 35px; }
+        .contact .icon-header svg path, .contact .icon-header svg polygon, .contact .icon-header svg rect {
+          fill: #FFF; }
+        .contact .icon-header svg:hover {
+          color: #FFF; }
+      .contact .icon-header svg.smaller {
+        width: 34px;
+        height: 34px; }
+    .contact .formWrap {
+      padding: 0;
+      margin: 0; }
+      .contact .formWrap form.wpcf7-form {
+        margin-top: 40px;
+        padding: 0;
+        width: 75%; }
+      .contact .formWrap input.firstName,
+      .contact .formWrap input.lastName,
+      .contact .formWrap input.email,
+      .contact .formWrap textarea.message {
+        color: #FFF;
+        border-color: #FFF;
+        padding: 5px;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
+        .contact .formWrap input.firstName:focus,
+        .contact .formWrap input.lastName:focus,
+        .contact .formWrap input.email:focus,
+        .contact .formWrap textarea.message:focus {
+          border-color: grey;
+          background: rgba(0, 0, 0, 0.4); } }
 /* ========================
 MAIN PAGE ENTRY STYLES
 ===========================*/

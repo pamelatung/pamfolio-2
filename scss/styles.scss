@@ -93,14 +93,41 @@ h2.caption {
 
 @media (max-width: 940px) {
 	.site-branding-hero {
+		height: 1000px;
+		background-image: url(images/hero-2-bw-tablet.jpg);
+		background-attachment: scroll;
+		background-size: 100%;
+
 		h1.site-title {
 			left: 2%;		
 		}
 	}
 }
 
+@media (max-width: 640px) {
+		.site-branding-hero {
+			height: 1135px;
+			background-image: url(images/hero-2-bw-mobile.jpg);
+			background-attachment: scroll;
+			background-size: 100%;
+
+			h1.site-title {
+				font-size: 100px;
+				left: 2%;		
+			}
+		}
+		h2.caption {
+			left: 30%;
+		}
+}
+
 @media (max-width: 490px) {
 	.site-branding-hero {
+		height: 800px;
+		background: url(images/hero-2-bw-mobile.jpg);
+		background: scroll;
+		background-size: 100%;
+
 		h1.site-title {
 			font-size: 100px;
 			left: 2%;		
@@ -108,6 +135,23 @@ h2.caption {
 	}
 	h2.caption {
 		left: 30%;
+	}
+}
+
+@media (max-width: 320px) {
+	.site-branding-hero {
+		height: 568px;
+		background: url(images/hero-2-bw-mobile.jpg);
+		background-size: 150;
+
+		h1.site-title {
+			font-size: 50px;
+			left: 2%;	
+		}
+	}
+	h2.caption {
+		top: 390px;
+		left: 18%;
 	}
 }
 
@@ -158,9 +202,9 @@ nav {
 					transform: scale(0.7);
 					transition: all 0.25s;
 
-					&:hover {
-						transform: scale(1);
-					}
+						&:hover {
+							transform: scale(1);
+						}
 				}
 				a.is-selected {
 					background: #000;
@@ -210,23 +254,11 @@ NAVIGATION - MEDIA QUERY 768px
 	
 } // END MEDIA QUERY FOR NAV - 768px
 
-/* ----------------------------
-NAVIGATION - MEDIA QUERY 768px
-------------------------------- */
+@media (max-width: 320px) {
 
-@media (max-width: 768px) {
-	.main-navigation {
-		position: fixed;
-		width: 14%;
-		top: -12px;
-		left: 85%;
-		clear: both;
-		padding: 0;
-		margin: 0 auto;
-		z-index: 999;
-	}
 	nav {
 		.menu ul {
+			display:block;
 			  li {
 			  	&:nth-child(1) a { background: red !important; }
 
@@ -240,13 +272,18 @@ NAVIGATION - MEDIA QUERY 768px
 
 			  	&:nth-child(6) a { background: magenta !important; }
 
-			  	a { color: #000; }
+			  	a { 
+			  		color: #000; 
+			  		&:hover {
+			  			transform: scale(0.7);
+			  		}
+			  	}
 
 			} // END li
 		} // END .menu ul
 	} // END nav
 	
-} // END MEDIA QUERY FOR NAV - 768px
+} // END MEDIA QUERY FOR NAV - 320px
 
 
 /*========================
@@ -568,18 +605,10 @@ MAIN PAGE - SKILLS
 			.shape {
 				@include arrow(23px, rgba(255,255,255,0.75));
 				transition: all 0.2s;
-
-					&:hover {
-						border-color: transparent transparent rgba(255,0,0,0.35) transparent;
-						cursor: pointer;
-					}
 			}
 			.rotate {
 				border-width: 23px 23px 0 23px;
 				border-color: rgba(255,0,0,0.35) transparent transparent transparent;
-				&:hover {
-					border-color: rgba(255,255,255,0.75) transparent transparent transparent;
-				}
 			}
 			
 			h4 {
@@ -681,9 +710,45 @@ SKILLS - MEDIA QUERY FOR 768px
 } // END MEDIA QUERY 768px
 
 /* ---------------------------
-SKILLS - MEDIA QUERY FOR 490px
+SKILLS - MEDIA QUERY FOR 640px
 ------------------------------*/ 
-@media (max-width: 490px) {
+
+@media (max-width: 640px) {
+
+	.skills {
+
+		.skills-item {
+
+			p {
+				//place text styles in here
+			}
+		} // END SKILLS ITEM
+
+		.skills-footer {
+			background: url(images/desk-2-bw-mobile.jpg);
+			background-size: 100%;
+			height: 500px;
+
+				svg {
+					width: 250px;
+					margin-top: 40px;
+					polygon{
+						fill: salmon;
+						stroke: salmon;
+						stroke-weight: 5px;
+					}
+				} 
+			} // END SVG ARROW STYLING
+
+	} // END SKILLS SECTION
+
+} // END MEDIA QUERY 640px
+
+
+/* ---------------------------
+SKILLS - MEDIA QUERY FOR 320px
+------------------------------*/ 
+@media (max-width: 320px) {
 
 	.skills {
 
@@ -691,7 +756,7 @@ SKILLS - MEDIA QUERY FOR 490px
 
 		.skills-item {
 			width: 100%;
-			height: 500px;
+			height: 370px;
 			margin: 0 auto;
 
 			p {
@@ -732,7 +797,7 @@ SKILLS - MEDIA QUERY FOR 490px
 				position: absolute;
 				width: 10%;
 				bottom: 5%;
-				left: 41%;
+				left: 35%;
 
 				.shape {
 					@include arrow(50px, rgba(255,255,255,0.75));
@@ -740,7 +805,7 @@ SKILLS - MEDIA QUERY FOR 490px
 				}
 				.rotate {
 					border-width: 50px 50px 0 50px;
-					border-color: rgba(255,255,255,0.75) transparent transparent transparent;
+					border-color: rgba(255,0,0,0.35) transparent transparent transparent;
 				}
 				
 				h4 {
@@ -755,11 +820,14 @@ SKILLS - MEDIA QUERY FOR 490px
 		} // END SKILLS ITEM
 
 		.skills-footer {
-			background: #FFF;
+			background: url(images/desk-2-bw-mobile.jpg);
+			background-size: 100%;
+			height: 400px;
+				p { margin: 0;}
 
 				svg {
 					width: 250px;
-					margin-top: 40px;
+					margin: 0;
 					polygon{
 						fill: salmon;
 						stroke: salmon;
@@ -770,7 +838,7 @@ SKILLS - MEDIA QUERY FOR 490px
 
 	} // END SKILLS SECTION
 
-} // END MEDIA QUERY 490px
+} // END MEDIA QUERY 320px
 
 
 
@@ -785,7 +853,6 @@ MAIN PAGE - PORTFOLIO
 	.port-item {
 		position: relative;
 		width: 100%;
-		// float: left;
 
 		.big {
 			position: relative;
@@ -863,7 +930,7 @@ MAIN PAGE - PORTFOLIO
 						letter-spacing: $spacing;		
 						color: #FFF;			
 					}
-					p {
+					p.overlay-desc {
 						position: absolute;
 						width: 100%;
 						top: 55%;
@@ -875,7 +942,7 @@ MAIN PAGE - PORTFOLIO
 					}
 					//PROJECT LABEL - CLOSE
 					p.close-me {
-						margin-top: -12px;
+						margin-top: 12px;
 						text-align: center;
 						font-weight: $medium;
 						color: rgba(0,0,0,0.1);
@@ -891,7 +958,7 @@ MAIN PAGE - PORTFOLIO
 
 					p.arrowlabel {
 						position: absolute;
-						left: 23%;
+						left: 24.5%;
 						top: 25%;
 						font-weight: $medium;
 						color: rgba(0,0,0,0.1);
@@ -899,7 +966,7 @@ MAIN PAGE - PORTFOLIO
 					}
 					p.arrowlabel-2 {
 						position: absolute;
-						right: 23%;
+						right: 24.5%;
 						top: 25%;
 						font-weight: $medium;
 						color: rgba(0,0,0,0.1);
@@ -1032,10 +1099,10 @@ PORTFOLIO - MEDIA QUERY FOR 940px
 // END MEDIA QUERY FOR 940px //
 
 /*-------------------------------------
-PORTFOLIO - MEDIA QUERY FOR 490px
+PORTFOLIO - MEDIA QUERY FOR 320px
 ---------------------------------------*/
 
-@media (max-width: 490px) {
+@media (max-width: 320px) {
 
 	.portfolio {
 		width: 100%;
@@ -1054,7 +1121,7 @@ PORTFOLIO - MEDIA QUERY FOR 490px
 					}
 					a { 
 						position: static;
-						margin-left: 155px;
+						margin-left: 75px;
 					}
 				}
 
@@ -1069,8 +1136,9 @@ PORTFOLIO - MEDIA QUERY FOR 490px
 					.item-name { font-size: 18px; }
 				}
 				.overlay {
-					p.arrowlabel { left: 35%; }
-					p.arrowlabel-2 { right: 35%; }
+					p.overlay-desc { display: none; }
+					p.arrowlabel { left: 35%; display: none; }
+					p.arrowlabel-2 { right: 35%; display: none;}
 					p.hideExpand { opacity: 0; }
 					.openWrap {
 						left: 10%;
@@ -1114,7 +1182,7 @@ PORTFOLIO - MEDIA QUERY FOR 490px
 		} // END .port-item
 	} // END .porfolio
 
-} // END MEDIA QUERY FOR 490px
+} // END MEDIA QUERY FOR 320px
 
 /* ========================
 CONTACT STYLES
@@ -1126,7 +1194,6 @@ CONTACT STYLES
 	text-align: center;
 	background: url(images/hero-2-bw.jpg);
 	background-size: cover;
-	background-attachment: fixed;
 	overflow: hidden;
 	clear: both;
 
@@ -1138,7 +1205,7 @@ CONTACT STYLES
 		h2 {
 			padding: 20px 0;
 			font-family: $optima;
-			font-weight: $heavy;
+			font-weight: $medium;
 			font-size: $size-h2;
 			color: #FFF;
 		}
@@ -1150,7 +1217,7 @@ CONTACT STYLES
 				fill: #FFF;
 			}
 			&:hover path, rect, polygon {
-				fill: sandybrown;
+				fill: #333;
 			}
 		}
 		// CODEPEN ICON SIZING
@@ -1158,15 +1225,28 @@ CONTACT STYLES
 			width: 45px;
 			height: 45px;
 		}
+		p {
+			padding-top: 10px;
+			margin: 0;
+			font-size: 16px;
+			color: #FFF;
+			letter-spacing: $spacing;
+		}
+	}
+
+	.contactInfo {
+		width: 100%;
+		padding: 20px 50px;
 	}
 
 	.formWrap {
 		width: 100%;
 		padding-left: 0%;
+	}
 
 		form.wpcf7-form {
-			width: 60%;
-			padding: 20px 0;
+			width: 50%;
+			padding: 20px 50px;
 			margin: 0 auto;
 			border-radius: 5px;
 			font-size: 14px;
@@ -1212,37 +1292,51 @@ CONTACT STYLES
 					color:#333;
 				}	
 		}
-	}
 }
 
 /* ----------------------------
-CONTACT - MEDIA QUERY 490px
+CONTACT - MEDIA QUERY 320px IPHONE
 ----------------------------- */
 
-@media (max-width: 490px) {
+@media (max-width: 320px) {
 
 	.contact {
+		height: 568px;
+		background: url(images/hero-2-bw-mobile.jpg);
+		background-size: 150%;
 
 		.icon-header {
+				height: 35px;
 
-			h2 { color: #FFF; }
+			h2 { 
+				padding: 0;
+				margin-top: 20px;
+				font-size: $size-p;
+				color: grey;
+			}
 
 			svg {
-				width: 50px;
+				width: 35px;
 
 				path, polygon, rect { fill: #FFF; }
+
+				&:hover {
+					color: #FFF;
+				}
 			}
-			// CODEPEN ICON SIZING
 			svg.smaller {
-				width: 45px;
-				height: 45px;
+				width: 34px;
+				height: 34px;
 			}
 		}
 
 		.formWrap {
-			padding-left: 0%;
+			padding: 0;
+			margin: 0;
 
 			form.wpcf7-form {
+				margin-top: 40px;
+				padding: 0;
 				width: 75%;
 			}
 
@@ -1254,9 +1348,11 @@ CONTACT - MEDIA QUERY 490px
 				color: #FFF;
 				border-color: #FFF;
 				padding: 5px;
+				margin: 0;
 				font-size: $size-p;
 				font-weight: $medium;
 				letter-spacing: $spacing;
+				box-shadow: none;
 
 					&:focus {
 						border-color: grey;
@@ -1266,7 +1362,7 @@ CONTACT - MEDIA QUERY 490px
 		}
 	} // END CONTACT SECTION
 
-} // END MEDIA QUERY
+} // END 320px MEDIA QUERY
 
 /* ========================
 MAIN PAGE ENTRY STYLES
