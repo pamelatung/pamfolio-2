@@ -17,6 +17,78 @@ $(document).ready(function() {
 		$('#main-nav').toggleClass("open");
 	});
 
+	// DETECTS WHICH SECTION IS ON SCREEN
+	$.fn.isOnScreen = function(x, y){
+	             
+	  if(x == null || typeof x == 'undefined') x = 1;
+	  if(y == null || typeof y == 'undefined') y = 1;
+
+	  var win = $(window);
+
+	  var viewport = {
+	       top : win.scrollTop(),
+	       left : win.scrollLeft()
+	  };
+	  viewport.right = viewport.left + win.width();
+	  viewport.bottom = viewport.top + win.height();
+
+	  var height = this.outerHeight();
+	  var width = this.outerWidth();
+
+	  if(!width || !height){
+	       return false;
+	  }
+
+	  var bounds = this.offset();
+	  bounds.right = bounds.left + width;
+	  bounds.bottom = bounds.top + height;
+
+	  var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+	  if(!visible){
+	       return false;   
+	  }
+
+	  var deltas = {
+	       top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
+	       bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
+	       left : Math.min(1, ( bounds.right - viewport.left ) / width),
+	       right : Math.min(1, ( viewport.right - bounds.left ) / width)
+	  };
+
+	  return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y; 
+	};
+	// END DETECT SECTION
+
+	$(window).scroll(function() {
+
+    var position = $(window).scrollTop();
+
+    var $otherDots = $('.nav-menu a');
+    // var dotColor = $('.nav-menu a').data('color');
+
+    if ($('.site-branding-hero').isOnScreen(0.5,0.5)) {
+    	$otherDots.css('background', '#FFF');
+    	$('.nav-menu li:nth-child(1) a').css('background', 'red');
+
+    } else if($('#about').isOnScreen(0.5,0.5)) {
+    	$otherDots.css('background', '#FFF');
+    	$('.nav-menu li:nth-child(2) a').css('background', 'gold');
+
+    } else if ($('#skills').isOnScreen(0.5,0.5)) {
+    	$otherDots.css('background', '#FFF');
+    	$('.nav-menu li:nth-child(3) a').css('background', 'turquoise');
+
+    } else if ($('#portfolio').isOnScreen(0.5,0.5)) {
+    	$otherDots.css('background', '#FFF');
+    	$('.nav-menu li:nth-child(4) a').css('background', 'salmon');
+
+    } else if ($('#contact').isOnScreen(0.5,0.5)) {
+    	$otherDots.css('background', '#FFF');
+    	$('.nav-menu li:nth-child(5) a').css('background', 'blue');
+    }
+
+	});
 
 	$('h1.site-title').fadeIn(800);  // Main page title fade in on load
 
@@ -37,21 +109,12 @@ $(document).ready(function() {
 		$(this).css('background-color', colorID);
 	});
 
-// SKILLS SECTION ARROWS DISPLAY TEXT
+// SKILLS SECTION DISPLAY TEXT - ARROWS
 $('.skill-overlay').hide();
 	$('.arrow').on('click', function() {
 		$(this).siblings('p').toggleClass('pSlide');
 		$(this).children('.shape').toggleClass('rotate');
 		$(this).siblings('img').toggleClass('seethru');
-	});
-
-	$(window).scroll(function() {
-
-	    var position = $(window).scrollTop();
-
-	    if(position > 400 && position < 3000) {
-	    	$('.about').addClass('about-show');
-	    } 
 	});
 
 	$('.overlay').on('click', function() {
@@ -63,7 +126,7 @@ $('.skill-overlay').hide();
 		$(this).children('.arrowlabel, .arrowlabel-2').toggleClass('hideExpand');
 	});
 
-});
+}); // END DOCUMENT READY FUNCTION
 
 // scroll function
 function scrollToID(id, speed){

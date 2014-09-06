@@ -32,6 +32,7 @@ $lh-basic: 1.75;
 
 body {
 	font-family: $font-default;
+	height: 100%;
 }
 
 h2 {
@@ -104,20 +105,21 @@ h2.caption {
 	}
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 		.site-branding-hero {
-			height: 1135px;
-			background-image: url(images/hero-2-bw-mobile.jpg);
-			background-attachment: scroll;
-			background-size: 100%;
+			height: 1024px;
+			background-image: url(images/hero-2-bw-tablet.jpg);
+			background-size: cover;
 
 			h1.site-title {
 				font-size: 100px;
 				left: 2%;		
 			}
 		}
+
 		h2.caption {
-			left: 30%;
+			top: 85%;
+			left: 40%;
 		}
 }
 
@@ -258,7 +260,7 @@ NAVIGATION - MEDIA QUERY 768px
 
 	nav {
 		.menu ul {
-			display:block;
+			display:none;
 			  li {
 			  	&:nth-child(1) a { background: red !important; }
 
@@ -406,13 +408,13 @@ ABOUT - MEDIA QUERY FOR 940px
 /* ---------------------------
 ABOUT - MEDIA QUERY FOR 768px
 ------------------------------*/ 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 
 	.quote {
 		height: 0;
 	}
 	.about {
-		height: 100vh;
+		height: 700px;
 
 		.about-img {
 			position: absolute;
@@ -605,6 +607,7 @@ MAIN PAGE - SKILLS
 			.shape {
 				@include arrow(23px, rgba(255,255,255,0.75));
 				transition: all 0.2s;
+				cursor: pointer;
 			}
 			.rotate {
 				border-width: 23px 23px 0 23px;
@@ -642,10 +645,12 @@ MAIN PAGE - SKILLS
 		svg {
 			width: 250px;
 			margin-top: 40px;
+
 			polygon{
-				fill: none;
+				fill: rgba(255,255,255,0);
 				stroke: #B0B0B0;
 				stroke-weight: 5px;
+				transition: all 0.1s;
 			}
 			&:hover {
 				cursor: pointer;
@@ -664,12 +669,15 @@ MAIN PAGE - SKILLS
 SKILLS - MEDIA QUERY FOR 768px
 ------------------------------*/ 
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 
 	.skills {
+		height: 700px;
+
 		.skills-item {
 			p { padding: 50px 50px; }
 			line-height: 1.5;
+			height: 400px;
 
 			&:nth-child(1) {
 				background: moccasin;
@@ -705,6 +713,26 @@ SKILLS - MEDIA QUERY FOR 768px
 							left: 41%;
 					} // END .arrow
 		} // END SKILLS ITEM
+
+		.skills-footer {
+			background: url(images/desk-2-bw-mobile.jpg);
+			background-size: cover;
+			height: 300px;
+				p { margin: 0;}
+
+				svg {
+					width: 250px;
+					margin: 0;
+
+					polygon{
+						fill: salmon;
+						stroke: salmon;
+						stroke-weight: 5px;
+						transition: all 0.25s;
+					}
+				} 
+			} // END SKILLS FOOTER STYLING
+
 	} // END SKILLS SECTION
 
 } // END MEDIA QUERY 768px
@@ -828,10 +856,12 @@ SKILLS - MEDIA QUERY FOR 320px
 				svg {
 					width: 250px;
 					margin: 0;
+
 					polygon{
 						fill: salmon;
 						stroke: salmon;
 						stroke-weight: 5px;
+						transition: all 0.25s;
 					}
 				} 
 			} // END SVG ARROW STYLING
@@ -1214,6 +1244,7 @@ CONTACT STYLES
 			width: 50px;
 
 			path, polygon, rect {
+				transition: all 0.25s;
 				fill: #FFF;
 			}
 			&:hover path, rect, polygon {
@@ -1295,6 +1326,87 @@ CONTACT STYLES
 }
 
 /* ----------------------------
+CONTACT - MEDIA QUERY 768px
+----------------------------- */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+	.contact {
+		height: 1024px;
+		background: url(images/hero-2-bw-mobile.jpg);
+		background-size: cover;
+
+		.icon-header {
+				height: 35px;
+
+			h2 { 
+				padding: 0;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: $size-h2;
+				color: #FFF;
+			}
+
+			p {
+				padding-top: 10px;
+				margin: 0;
+				font-size: 16px;
+				color: #FFF;
+				letter-spacing: $spacing;
+				display: block
+			}
+
+			svg {
+				width: 35px;
+
+				path, polygon, rect { fill: #FFF; }
+
+				&:hover {
+					color: #FFF;
+				}
+			}
+			svg.smaller {
+				width: 34px;
+				height: 34px;
+			}
+		}
+
+		.formWrap {
+			padding: 0;
+			margin: 0;
+
+			form.wpcf7-form {
+				margin-top: 120px;
+				padding: 0;
+				width: 75%;
+			}
+
+			input.firstName,
+			input.lastName,
+			input.email,
+			textarea.message {
+
+				color: #FFF;
+				border-color: #FFF;
+				padding: 5px;
+				margin: 0;
+				font-size: $size-p;
+				font-weight: $medium;
+				letter-spacing: $spacing;
+				box-shadow: none;
+
+					&:focus {
+						border-color: grey;
+						background: rgba(0,0,0,0.4);
+					}
+			}
+		}
+	} // END CONTACT SECTION
+
+} // END 768px MEDIA QUERY
+
+
+/* ----------------------------
 CONTACT - MEDIA QUERY 320px IPHONE
 ----------------------------- */
 
@@ -1335,7 +1447,7 @@ CONTACT - MEDIA QUERY 320px IPHONE
 			margin: 0;
 
 			form.wpcf7-form {
-				margin-top: 40px;
+				margin-top: 100px;
 				padding: 0;
 				width: 75%;
 			}
@@ -1490,6 +1602,11 @@ FOOTERS
 .site-info {
 	background: none;
 	clear: both;
+	p {
+		padding: 20px;
+		font-size: $size-tiny;
+		color: #999;
+	}
 }
 
 

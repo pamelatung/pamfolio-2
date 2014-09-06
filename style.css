@@ -346,7 +346,7 @@ a:active {
   position: fixed;
   width: 14%;
   top: -12px;
-  left: 85%;
+  left: 88%;
   clear: both;
   padding: 0;
   margin: 0 auto;
@@ -547,7 +547,8 @@ object {
   max-width: 100%; }
 
 body {
-  font-family: "Helvetica Neue", "Arial", sans-serif; }
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  height: 100%; }
 
 h2 {
   font-size: 24px; }
@@ -606,18 +607,18 @@ h2.caption {
     background-size: 100%; }
     .site-branding-hero h1.site-title {
       left: 2%; } }
-@media (max-width: 640px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .site-branding-hero {
-    height: 1135px;
-    background-image: url(images/hero-2-bw-mobile.jpg);
-    background-attachment: scroll;
-    background-size: 100%; }
+    height: 1024px;
+    background-image: url(images/hero-2-bw-tablet.jpg);
+    background-size: cover; }
     .site-branding-hero h1.site-title {
       font-size: 100px;
       left: 2%; }
 
   h2.caption {
-    left: 30%; } }
+    top: 85%;
+    left: 40%; } }
 @media (max-width: 490px) {
   .site-branding-hero {
     height: 800px;
@@ -718,7 +719,7 @@ NAVIGATION - MEDIA QUERY 768px
     color: #000; } }
 @media (max-width: 320px) {
   nav .menu ul {
-    display: block; }
+    display: none; }
     nav .menu ul li:nth-child(1) a {
       background: red !important; }
     nav .menu ul li:nth-child(2) a {
@@ -828,12 +829,12 @@ ABOUT - MEDIA QUERY FOR 940px
 /* ---------------------------
 ABOUT - MEDIA QUERY FOR 768px
 ------------------------------*/
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .quote {
     height: 0; }
 
   .about {
-    height: 100vh; }
+    height: 700px; }
     .about .about-img {
       position: absolute;
       width: 55%;
@@ -987,7 +988,8 @@ MAIN PAGE - SKILLS
         border-width: 0 23px 23px 23px;
         border-color: transparent transparent rgba(255, 255, 255, 0.75) transparent;
         -webkit-transition: all 0.2s;
-                transition: all 0.2s; }
+                transition: all 0.2s;
+        cursor: pointer; }
       .skills .skills-item .arrow .rotate {
         border-width: 23px 23px 0 23px;
         border-color: rgba(255, 0, 0, 0.35) transparent transparent transparent; }
@@ -1016,9 +1018,11 @@ MAIN PAGE - SKILLS
       width: 250px;
       margin-top: 40px; }
       .skills .skills-footer svg polygon {
-        fill: none;
+        fill: rgba(255, 255, 255, 0);
         stroke: #B0B0B0;
-        stroke-weight: 5px; }
+        stroke-weight: 5px;
+        -webkit-transition: all 0.1s;
+                transition: all 0.1s; }
       .skills .skills-footer svg:hover {
         cursor: pointer; }
         .skills .skills-footer svg:hover polygon {
@@ -1028,34 +1032,52 @@ MAIN PAGE - SKILLS
 /* ---------------------------
 SKILLS - MEDIA QUERY FOR 768px
 ------------------------------*/
-@media (max-width: 768px) {
-  .skills .skills-item {
-    line-height: 1.5; }
-    .skills .skills-item p {
-      padding: 50px 50px; }
-    .skills .skills-item:nth-child(1) {
-      background: moccasin; }
-      .skills .skills-item:nth-child(1) img {
-        width: 60%;
-        position: absolute;
-        top: 11%;
-        left: 20%; }
-    .skills .skills-item:nth-child(2) {
-      background: peachpuff; }
-      .skills .skills-item:nth-child(2) img {
-        width: 65%;
-        position: absolute;
-        top: 10%;
-        left: 17%; }
-    .skills .skills-item:nth-child(3) {
-      background: lightsalmon; }
-      .skills .skills-item:nth-child(3) img {
-        width: 45%;
-        position: absolute;
-        top: 18%;
-        left: 27%; }
-    .skills .skills-item .arrow {
-      left: 41%; } }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .skills {
+    height: 700px; }
+    .skills .skills-item {
+      line-height: 1.5;
+      height: 400px; }
+      .skills .skills-item p {
+        padding: 50px 50px; }
+      .skills .skills-item:nth-child(1) {
+        background: moccasin; }
+        .skills .skills-item:nth-child(1) img {
+          width: 60%;
+          position: absolute;
+          top: 11%;
+          left: 20%; }
+      .skills .skills-item:nth-child(2) {
+        background: peachpuff; }
+        .skills .skills-item:nth-child(2) img {
+          width: 65%;
+          position: absolute;
+          top: 10%;
+          left: 17%; }
+      .skills .skills-item:nth-child(3) {
+        background: lightsalmon; }
+        .skills .skills-item:nth-child(3) img {
+          width: 45%;
+          position: absolute;
+          top: 18%;
+          left: 27%; }
+      .skills .skills-item .arrow {
+        left: 41%; }
+    .skills .skills-footer {
+      background: url(images/desk-2-bw-mobile.jpg);
+      background-size: cover;
+      height: 300px; }
+      .skills .skills-footer p {
+        margin: 0; }
+      .skills .skills-footer svg {
+        width: 250px;
+        margin: 0; }
+        .skills .skills-footer svg polygon {
+          fill: salmon;
+          stroke: salmon;
+          stroke-weight: 5px;
+          -webkit-transition: all 0.25s;
+                  transition: all 0.25s; } }
 /* ---------------------------
 SKILLS - MEDIA QUERY FOR 640px
 ------------------------------*/
@@ -1139,7 +1161,9 @@ SKILLS - MEDIA QUERY FOR 320px
         .skills .skills-footer svg polygon {
           fill: salmon;
           stroke: salmon;
-          stroke-weight: 5px; } }
+          stroke-weight: 5px;
+          -webkit-transition: all 0.25s;
+                  transition: all 0.25s; } }
 /*========================
 MAIN PAGE - PORTFOLIO
 =========================*/
@@ -1426,6 +1450,8 @@ CONTACT STYLES
     .contact .icon-header svg {
       width: 50px; }
       .contact .icon-header svg path, .contact .icon-header svg polygon, .contact .icon-header svg rect {
+        -webkit-transition: all 0.25s;
+                transition: all 0.25s;
         fill: #FFF; }
       .contact .icon-header svg:hover path, .contact .icon-header svg rect, .contact .icon-header svg polygon {
         fill: #333; }
@@ -1492,6 +1518,64 @@ CONTACT STYLES
       color: #333; }
 
 /* ----------------------------
+CONTACT - MEDIA QUERY 768px
+----------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact {
+    height: 1024px;
+    background: url(images/hero-2-bw-mobile.jpg);
+    background-size: cover; }
+    .contact .icon-header {
+      height: 35px; }
+      .contact .icon-header h2 {
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #FFF; }
+      .contact .icon-header p {
+        padding-top: 10px;
+        margin: 0;
+        font-size: 16px;
+        color: #FFF;
+        letter-spacing: 1px;
+        display: block; }
+      .contact .icon-header svg {
+        width: 35px; }
+        .contact .icon-header svg path, .contact .icon-header svg polygon, .contact .icon-header svg rect {
+          fill: #FFF; }
+        .contact .icon-header svg:hover {
+          color: #FFF; }
+      .contact .icon-header svg.smaller {
+        width: 34px;
+        height: 34px; }
+    .contact .formWrap {
+      padding: 0;
+      margin: 0; }
+      .contact .formWrap form.wpcf7-form {
+        margin-top: 120px;
+        padding: 0;
+        width: 75%; }
+      .contact .formWrap input.firstName,
+      .contact .formWrap input.lastName,
+      .contact .formWrap input.email,
+      .contact .formWrap textarea.message {
+        color: #FFF;
+        border-color: #FFF;
+        padding: 5px;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
+        .contact .formWrap input.firstName:focus,
+        .contact .formWrap input.lastName:focus,
+        .contact .formWrap input.email:focus,
+        .contact .formWrap textarea.message:focus {
+          border-color: grey;
+          background: rgba(0, 0, 0, 0.4); } }
+/* ----------------------------
 CONTACT - MEDIA QUERY 320px IPHONE
 ----------------------------- */
 @media (max-width: 320px) {
@@ -1519,7 +1603,7 @@ CONTACT - MEDIA QUERY 320px IPHONE
       padding: 0;
       margin: 0; }
       .contact .formWrap form.wpcf7-form {
-        margin-top: 40px;
+        margin-top: 100px;
         padding: 0;
         width: 75%; }
       .contact .formWrap input.firstName,
@@ -1632,3 +1716,7 @@ FOOTERS
 .site-info {
   background: none;
   clear: both; }
+  .site-info p {
+    padding: 20px;
+    font-size: 12px;
+    color: #999; }
