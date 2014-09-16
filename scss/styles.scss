@@ -140,7 +140,7 @@ h2.caption {
 	}
 }
 
-@media (max-width: 320px) {
+@media (max-width: 320px), (max-width: 360px), (max-width: 384px) {
 	.site-branding-hero {
 		height: 568px;
 		background: url(images/hero-2-bw-mobile.jpg);
@@ -774,9 +774,9 @@ SKILLS - MEDIA QUERY FOR 640px
 
 
 /* ---------------------------
-SKILLS - MEDIA QUERY FOR 320px
+SKILLS - MEDIA QUERY FOR 320px, 360px, 384px
 ------------------------------*/ 
-@media (max-width: 320px) {
+@media (max-width: 320px), (max-width: 360px), (max-width: 384px) {
 
 	.skills {
 
@@ -784,7 +784,7 @@ SKILLS - MEDIA QUERY FOR 320px
 
 		.skills-item {
 			width: 100%;
-			height: 370px;
+			height: 430px;
 			margin: 0 auto;
 
 			p {
@@ -825,7 +825,7 @@ SKILLS - MEDIA QUERY FOR 320px
 				position: absolute;
 				width: 10%;
 				bottom: 5%;
-				left: 35%;
+				left: 37%;
 
 				.shape {
 					@include arrow(50px, rgba(255,255,255,0.75));
@@ -850,12 +850,12 @@ SKILLS - MEDIA QUERY FOR 320px
 		.skills-footer {
 			background: url(images/desk-2-bw-mobile.jpg);
 			background-size: 100%;
-			height: 400px;
+			height: 250px;
 				p { margin: 0;}
 
 				svg {
-					width: 250px;
-					margin: 0;
+					width: 150px;
+					margin: 15% 0 0 0;
 
 					polygon{
 						fill: salmon;
@@ -1132,7 +1132,7 @@ PORTFOLIO - MEDIA QUERY FOR 940px
 PORTFOLIO - MEDIA QUERY FOR 320px
 ---------------------------------------*/
 
-@media (max-width: 320px) {
+@media (max-width: 320px), (max-width: 360px), (max-width: 384px) {
 
 	.portfolio {
 		width: 100%;
@@ -1166,7 +1166,7 @@ PORTFOLIO - MEDIA QUERY FOR 320px
 					.item-name { font-size: 18px; }
 				}
 				.overlay {
-					p.overlay-desc { display: none; }
+					p.overlay-desc { display: block; }
 					p.arrowlabel { left: 35%; display: none; }
 					p.arrowlabel-2 { right: 35%; display: none;}
 					p.hideExpand { opacity: 0; }
@@ -1410,7 +1410,7 @@ CONTACT - MEDIA QUERY 768px
 CONTACT - MEDIA QUERY 320px IPHONE
 ----------------------------- */
 
-@media (max-width: 320px) {
+@media (max-width: 320px), (max-width: 360px), (max-width: 384px) {
 
 	.contact {
 		height: 568px;
@@ -1421,10 +1421,10 @@ CONTACT - MEDIA QUERY 320px IPHONE
 				height: 35px;
 
 			h2 { 
+				margin: 10px 0;
 				padding: 0;
-				margin-top: 20px;
 				font-size: $size-p;
-				color: grey;
+				color: #FFF;
 			}
 
 			svg {
@@ -1459,9 +1459,9 @@ CONTACT - MEDIA QUERY 320px IPHONE
 
 				color: #FFF;
 				border-color: #FFF;
-				padding: 5px;
+				padding: 2px;
 				margin: 0;
-				font-size: $size-p;
+				font-size: $size-tiny;
 				font-weight: $medium;
 				letter-spacing: $spacing;
 				box-shadow: none;
